@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="" />
+    <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/css/Dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/Modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/DeleteModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/WriteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/List.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/List.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Write.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Write.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Write.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Write.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Eomeunsung"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Eomeunsung/Blog-Front.git",
+    "accountId": "e28b3ab1-7669-46dd-bbdb-7bab0dc0ecfa"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -33,30 +67,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.blog 빌드.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.BlogApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/eom-eunseong/Desktop/blog",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.blog 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/eom-eunseong/Desktop/blog&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="blog.main" />
@@ -92,6 +127,9 @@
       <workItem from="1731306926743" duration="14843000" />
       <workItem from="1732074612476" duration="3000" />
       <workItem from="1732365953333" duration="9304000" />
+      <workItem from="1732582663248" duration="11220000" />
+      <workItem from="1732624567145" duration="6000" />
+      <workItem from="1732624581164" duration="12000" />
     </task>
     <servers />
   </component>

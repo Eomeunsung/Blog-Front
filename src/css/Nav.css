@@ -1,0 +1,44 @@
+/* Navbar 전체 배경 */
+.custom-navbar {
+    background: linear-gradient(90deg, #6c63ff, #ff6584);
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 브랜드 로고 */
+.custom-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.custom-brand:hover {
+    color: #ffcfdf; /* 호버 시 부드러운 강조 색상 */
+    text-decoration: none;
+}
+
+/* 네비게이션 링크 */
+.custom-nav-link {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.custom-nav-link:hover {
+    color: #ffcfdf; /* 호버 시 부드러운 강조 */
+}
+
+/* 버튼 스타일 */
+.custom-button {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #fff;
+    color: #6c63ff;
+}
