@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import './../css/Write.css';
-import { writeBlog } from "./../api/BlogApi";
 import { BiSolidEditAlt } from "react-icons/bi";
 import WriteModal from "./WriteModal";
 

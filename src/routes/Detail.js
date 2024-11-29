@@ -20,7 +20,7 @@ function Detail(props) {
                 </button>
             </div>
             {
-                deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal}/>)
+                deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal} handleRenewal={props.handleRenewal}/>)
             }
 
         </div>

@@ -2,10 +2,12 @@ import React from "react";
 import './../css/Modal.css';
 import { deleteBlog } from "./../api/BlogApi";
 
-const DeleteModal = ({ blogId, deleteIs }) => {
+const DeleteModal = ({ blogId, deleteIs, handleRenewal}) => {
 
-    const handleAdd = () => {
-        deleteBlog(blogId);
+    const handleAdd = async () => {
+        await deleteBlog(blogId);
+        handleRenewal()
+
         deleteIs(); // 모달 닫기
     };
 

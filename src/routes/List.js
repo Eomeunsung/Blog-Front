@@ -4,7 +4,7 @@ import { FiMenu,FiGrid } from "react-icons/fi";
 import Detail from './Detail'
 import {getBlog} from "./../api/BlogApi";
 import {useLocation} from "react-router-dom";
-import WriteModal from "./WriteModal";
+
 
 const initState = {
     id : 0,
@@ -19,8 +19,13 @@ function List(props) {
 
     const [selectedBlog, setSelectedBlog] = useState({...initState}); // 선택된 블로그 데이터
     const [isHidingDetail, setIsHidingDetail] = useState(false); // 애니메이션 상태
+    const [renewal, setRenewal] = useState(false);
     const location = useLocation(); // 현재 URL 경로 가져오기
 
+    const handleRenewal = () =>{
+        console.log("호출")
+        setRenewal(true);
+    }
     const handleSelectBlog = (blog) => {
         setSelectedBlog(blog); // 블로그 선택
         setIsHidingDetail(false); // 애니메이션 초기화
@@ -35,13 +40,10 @@ function List(props) {
     };
 
     useEffect(() => {
-        getBlog().then((result) => {console.log("데이터: "+result); setBlog(result)});  // result.data는 함수가 아니라 데이터입니다.
-    }, []);
-
-    // 페이지가 다시 로드될 때 상태 초기화
-    useEffect(() => {
         setSelectedBlog(null); // 상세 정보를 초기화
-    }, [location]); // URL 변경 시 트리거
+        getBlog().then((result) => {setBlog(result); setRenewal(false)});  // result.data는 함수가 아니라 데이터입니다.
+    }, [location, renewal]);
+
 
     return (
         <div>
@@ -64,6 +66,7 @@ function List(props) {
                     isHidingDetail={isHidingDetail}
                     onClose={handleCloseDetail}
                     value={selectedBlog}
+                    handleRenewal={handleRenewal}
                 />
             ) : (
                 /* 리스트 렌더링 */
@@ -74,7 +77,8 @@ function List(props) {
                                 className={isGrid ? "grid-item" : "list-item"}
                                 onClick={() => handleSelectBlog(value)}
                             >
-                                {value.title}
+                                <h5>{value.title}</h5>
+                                <p>{value.localDate}</p>
                             </div>
                         ))
                     ) : (

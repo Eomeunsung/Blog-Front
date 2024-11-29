@@ -30,21 +30,79 @@
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* 리스트 아이템 스타일 */
-.list-item {
-    padding: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+/* 리스트 컨테이너 스타일 */
+.list-container {
     display: flex;
-    align-items: center;
-    font-size: 18px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
+    gap: 20px; /* 항목 간의 간격 */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+/* 리스트 항목 스타일 */
+.list-item {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 리스트 항목 호버 효과 */
 .list-item:hover {
-    transform: translateX(10px);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    background-color: #e2e2e2;
 }
 
+/* 제목 스타일 */
+.list-item h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 날짜 스타일 */
+.list-item p {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* 비어 있을 때 메시지 */
+.empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+
+
+
+/* 제목 스타일 */
+.grid-item h5, .list-item h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.grid-item h5:hover, .list-item h5:hover {
+    color: #007BFF; /* 마우스를 올리면 색상이 바뀌는 효과 */
+}
+
+/* 날짜 스타일 */
+.grid-item p, .list-item p {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.grid-item p, .list-item p {
+    margin-bottom: 0;
+}
