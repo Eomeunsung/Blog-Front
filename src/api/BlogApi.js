@@ -20,7 +20,6 @@ export const writeBlog = async (data) => {
                 "Content-Type": "application/json",
             }
         })
-        console.log("등록 성공");
     }catch (error) {
         console.log(error);
     }

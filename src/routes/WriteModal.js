@@ -3,13 +3,14 @@ import './../css/Modal.css';
 import { writeBlog } from "./../api/BlogApi";
 import {useNavigate} from "react-router-dom";
 
-const WriteModal = ({ blog, closeModal }) => {
+const WriteModal = ({ blog, closeModal,urlimgList  }) => {
     const navigate = useNavigate();
     const handleAdd = () => {
         writeBlog(blog);
         navigate("/")
         closeModal(); // 모달 닫기
     };
+
 
     return (
         <div className="modal-overlay" onClick={closeModal}>
