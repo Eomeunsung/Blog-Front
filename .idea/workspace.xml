@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/css/Editor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/editor/Editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/editor/ToobarOption.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/WriteEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Write.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Write.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/WriteModal.js" afterDir="false" />
-    </list>
+    <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +49,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.blog 빌드.executor": "Run",
+    "Node.js.WriteEditor.js.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -126,6 +113,7 @@
       <workItem from="1733582867950" duration="37000" />
       <workItem from="1733976096806" duration="9000" />
       <workItem from="1735916300362" duration="3734000" />
+      <workItem from="1736174753740" duration="8061000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,5 @@
 import ReactQuill from "react-quill";
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {toolbarOptions, formats} from '../editor/ToobarOption'
 import Form from "react-bootstrap/Form";
 import { BiSolidEditAlt } from "react-icons/bi";
@@ -12,8 +12,9 @@ const initState = {
 };
 
 function WriteEditor(props) {
-
-    let urlimgList; //base64 디코딩 이미지 리스트
+    let flag = false;
+    const [urlimgList, setUrlimgList] = useState([]);
+    const [nameImg, setNameImg] = useState([]);
 
     const modules = {
         toolbar: toolbarOptions.toolbar,
@@ -32,16 +33,21 @@ function WriteEditor(props) {
     const handleChangeBody=(e)=>{
         blog["content"] = e;
     }
+    useEffect(() => {
+        if (urlimgList.length > 0) {
+            blog["imgUrl"] = nameImg;
+            console.log("이미지 이름들 "+blog["imgUrl"]);
+        }
+    }, [nameImg]); // urlimgList가 변경될 때마다 실행됨
 
-    async function changeImg(){
-        urlimgList = [];
-        console.log("changeImg 함수 진입");
+    function changeImg() {
         const gainSource = /<img[^>]*src\s*=\s*['"]([^'"]+)['"][^>]*>/g;
 
         let match;
         let updatedContent = blog["content"];
-
-        while((match = gainSource.exec(blog["content"]))!=null){
+        const newUrlimgList = []; // 새로운 이미지 URL 리스트
+        const newNameimg = [];
+        while ((match = gainSource.exec(blog["content"])) != null) {
             const base64 = match[1];
             if (base64.startsWith("data:image") && base64.includes(";base64,")) {
                 const byteString = atob(base64.split(",")[1]);
@@ -50,17 +56,22 @@ function WriteEditor(props) {
                 for (let i = 0; i < byteString.length; i++) {
                     ia[i] = byteString.charCodeAt(i);
                 }
-                const blob = new Blob([ia], {type: "image/png"});
-                const blobUrl = URL.createObjectURL(blob); // Blob URL 생성
-// 기존 Base64 데이터를 Blob URL로 교체
-                updatedContent = updatedContent.replace(base64, blobUrl);
-                urlimgList.push(blobUrl);
+                const blob = new Blob([ia], { type: "image/png" });
+                // const blobUrl = URL.createObjectURL(blob); // Blob URL 생성
+                const uniqueFileName = `${crypto.randomUUID()}.png`;
+                const file = new File([blob], uniqueFileName, {type: "image/png"});
+                updatedContent = updatedContent.replace(base64, file.name);
+                console.log("파일 이름 "+file.name)
+                newUrlimgList.push(file);
+                newNameimg.push(file.name);
             }
         }
-        blog["content"] = updatedContent;
-
-
+        setUrlimgList((prevList) => [...prevList, ...newUrlimgList]);
+        setNameImg((prevList) => [...prevList, ...newNameimg]);
+        blog["content"] = updatedContent
+        flag = true;
     }
+
     return (
         <div style={{display: "flex", flexDirection: "column", gap: "5px" }}>
             {/* Title Input */}
@@ -84,8 +95,8 @@ function WriteEditor(props) {
             {/* 제출 버튼 */}
             <BiSolidEditAlt
                 onClick={() => {
-                    setModal(true); // 모달 열기
                     changeImg();
+                    setModal(flag); // 모달 열기
                 }}
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
