@@ -1,25 +1,24 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './../css/Modal.css';
 import {imgUpload, writeBlog} from "./../api/BlogApi";
 import {useNavigate} from "react-router-dom";
+import * as uploadedFileNames from "react-bootstrap/ElementChildren";
 
 const WriteModal = ({ blog, closeModal, urlimgList  }) => {
+    console.log("받은 blog: "+blog["content"]);
     const navigate = useNavigate();
     const formData = new FormData();
-
-    console.log("폼데이터 사이즈 "+urlimgList.length)
     if(urlimgList.length > 0){
         urlimgList.forEach((file) => {
             formData.append("files", file); // 여러 개의 파일 추가
         });
-        console.log("폼데이터 리스트 "+formData.getAll("files"));
-
     }
-
-
     const handleAdd = async () => {
+        if(urlimgList.length > 0){
+            await imgUpload(formData)
+        }
         await writeBlog(blog);
-        await imgUpload(formData);
+
         navigate("/")
         closeModal(); // 모달 닫기
     };

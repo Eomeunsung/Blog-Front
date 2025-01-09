@@ -8,6 +8,7 @@ function Detail(props) {
     const handleCloseModal = () => {
         setDeleteIs(false);
     }
+    console.log(props.value.content)
     return (
         <div className={`blog-detail ${props.isHidingDetail ? "hide" : ""}`}>
             <div className="content">

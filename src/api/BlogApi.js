@@ -46,7 +46,7 @@ export const imgUpload = async (formData) => {
                 "Content-Type": "multipart/form-data",
             }
         });
-        console.log(res.data);
+        return res.data.data;
     }catch (error) {
         if (error.response) {
             // 서버에서 응답이 왔을 경우

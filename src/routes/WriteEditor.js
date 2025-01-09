@@ -59,11 +59,14 @@ function WriteEditor(props) {
                 const blob = new Blob([ia], { type: "image/png" });
                 // const blobUrl = URL.createObjectURL(blob); // Blob URL 생성
                 const uniqueFileName = `${crypto.randomUUID()}.png`;
+                const urlName = `${process.env.REACT_APP_URL}/${uniqueFileName}`;
+                console.log("urlName "+urlName);
                 const file = new File([blob], uniqueFileName, {type: "image/png"});
-                updatedContent = updatedContent.replace(base64, file.name);
+                updatedContent = updatedContent.replace(base64, urlName);
+                console.log("updatedContent: ", updatedContent);
                 console.log("파일 이름 "+file.name)
                 newUrlimgList.push(file);
-                newNameimg.push(file.name);
+                newNameimg.push(urlName);
             }
         }
         setUrlimgList((prevList) => [...prevList, ...newUrlimgList]);
