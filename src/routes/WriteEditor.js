@@ -63,8 +63,6 @@ function WriteEditor(props) {
                 console.log("urlName "+urlName);
                 const file = new File([blob], uniqueFileName, {type: "image/png"});
                 updatedContent = updatedContent.replace(base64, urlName);
-                console.log("updatedContent: ", updatedContent);
-                console.log("파일 이름 "+file.name)
                 newUrlimgList.push(file);
                 newNameimg.push(urlName);
             }

@@ -1,8 +1,8 @@
 /* 블로그 상세 페이지 컨테이너 */
 .blog-detail {
-    max-width: 900px;
+    max-width: 1200px; /* 기존 900px에서 1200px로 확대 */
     margin: 50px auto;
-    padding: 32px;
+    padding: 40px; /* 기존 32px에서 40px으로 확대 */
     background: linear-gradient(145deg, #ffffff, #f3f3f3);
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -12,11 +12,11 @@
 
 /* 제목 스타일 */
 .blog-detail h1 {
-    font-size: 40px;
+    font-size: 32px; /* 제목 크기 확대 */
     font-weight: bold;
     color: #222;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 3px solid #007bff;
     display: inline-block;
     padding-bottom: 10px;
@@ -33,43 +33,44 @@
 
 /* 내용 스타일 */
 .blog-detail p {
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 22px; /* 글자 크기 확대 */
+    line-height: 2; /* 줄 간격 확대 */
     color: #444;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: justify;
 }
 
 /* 이미지 스타일 */
 .blog-detail img {
     display: block;
-    max-width: 100%;
+    max-width: 100%; /* 이미지가 컨테이너를 넘어가지 않도록 */
     height: auto;
-    margin: 30px auto;
+    margin: 40px auto; /* 위아래 여백 확대 */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* 버튼 스타일 */
-.blog-detail .back-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+.close-button {
+    background-color: #a2d2ff; /* 은은한 파스텔 파란색 */
+    color: #1e3a8a; /* 짙은 네이비로 텍스트 강조 */
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px; /* 버튼 글씨 크기 확대 */
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.blog-detail .back-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.close-button:hover {
+    background-color: #caf0f8; /* 더 밝은 파란색으로 전환 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
+}
+
+.close-button:active {
+    background-color: #90e0ef; /* 클릭 시 살짝 더 진해짐 */
+    transform: scale(1); /* 클릭하면 원래 크기로 */
 }
 
 /* 반응형 디자인 */
@@ -87,45 +88,14 @@
     }
 }
 
-/* 상세 정보 컨테이너 */
+/* 애니메이션 효과 */
 .blog-detail {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 32px;
-    background: linear-gradient(145deg, #ffffff, #f3f3f3);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, opacity 0.5s ease; /* 애니메이션 효과 */
+    transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 1;
-    transform: translateY(0); /* 초기 위치 */
+    transform: translateY(0);
 }
 
-/* 아래로 내려가는 애니메이션 */
 .blog-detail.hide {
-    opacity: 0; /* 투명도 */
-    transform: translateY(100%); /* 아래로 이동 */
+    opacity: 0;
+    transform: translateY(100%);
 }
-
-.close-button {
-    background-color: #a2d2ff; /* 은은한 파스텔 파란색 */
-    color: #1e3a8a; /* 짙은 네이비로 텍스트 강조 */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.close-button:hover {
-    background-color: #caf0f8; /* 더 밝은 파란색으로 전환 */
-    transform: scale(1.05); /* 호버 시 약간 확대 */
-}
-
-.close-button:active {
-    background-color: #90e0ef; /* 클릭 시 살짝 더 진해짐 */
-    transform: scale(1); /* 클릭하면 원래 크기로 */
-}
-
-

@@ -23,7 +23,6 @@ function List(props) {
     const location = useLocation(); // 현재 URL 경로 가져오기
 
     const handleRenewal = () =>{
-        console.log("호출")
         setRenewal(true);
     }
     const handleSelectBlog = (blog) => {

@@ -2,10 +2,8 @@ import React, {useEffect, useState} from "react";
 import './../css/Modal.css';
 import {imgUpload, writeBlog} from "./../api/BlogApi";
 import {useNavigate} from "react-router-dom";
-import * as uploadedFileNames from "react-bootstrap/ElementChildren";
 
 const WriteModal = ({ blog, closeModal, urlimgList  }) => {
-    console.log("받은 blog: "+blog["content"]);
     const navigate = useNavigate();
     const formData = new FormData();
     if(urlimgList.length > 0){
@@ -15,9 +13,10 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
     }
     const handleAdd = async () => {
         if(urlimgList.length > 0){
-            await imgUpload(formData)
+            console.log(await imgUpload(formData))
+
         }
-        await writeBlog(blog);
+        console.log( await writeBlog(blog));
 
         navigate("/")
         closeModal(); // 모달 닫기

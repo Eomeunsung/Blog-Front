@@ -13,13 +13,20 @@ function Detail(props) {
         <div className={`blog-detail ${props.isHidingDetail ? "hide" : ""}`}>
             <div className="content">
                 <h1>{props.value.title}</h1>
-                <p dangerouslySetInnerHTML={{ __html: props.value.content }}
-                   style={{ whiteSpace: 'pre-line' }} ></p>
+                <p dangerouslySetInnerHTML={{__html: props.value.content}}
+                   style={{whiteSpace: 'pre-line'}}></p>
                 <button className="close-button" onClick={props.onClose}>
                     Close
                 </button>
-                <button className="close-button" onClick={()=>{setDeleteIs(true)}}>
+                <button className="close-button" onClick={() => {
+                    setDeleteIs(true)
+                }}>
                     Delete
+                </button>
+                <button className="close-button" onClick={() => {
+                    setDeleteIs(true)
+                }}>
+                    Modify
                 </button>
             </div>
             {
