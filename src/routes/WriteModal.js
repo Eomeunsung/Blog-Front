@@ -11,13 +11,14 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
             formData.append("files", file); // 여러 개의 파일 추가
         });
     }
+    console.log("데이터 보낵기 전 "+blog.imgUrl+" "+blog.title+" "+blog.content)
     const handleAdd = async () => {
         if(urlimgList.length > 0){
-            console.log(await imgUpload(formData))
-
+            const imgurl = await imgUpload(formData)
+            blog.imgUrl = imgurl;
         }
+        console.log("데이터 보낵기 "+blog.imgUrl+" "+blog.title+" "+blog.content)
         console.log( await writeBlog(blog));
-
         navigate("/")
         closeModal(); // 모달 닫기
     };

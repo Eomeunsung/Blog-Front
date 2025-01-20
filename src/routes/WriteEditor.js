@@ -8,7 +8,7 @@ import WriteModal from "./WriteModal";
 const initState = {
     title:'',
     content:'',
-    imgUrl:'',
+    imgUrl:null,
 };
 
 function WriteEditor(props) {

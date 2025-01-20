@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import './../css/Detail.css';
 import DeleteModal from "./DeleteModal";
 import 'react-quill/dist/quill.snow.css';  // Quill 기본 스타일
+import Modify from "./Modify";
+import {useNavigate} from "react-router-dom";
 
 function Detail(props) {
+    const navigate = useNavigate();
     const [deleteIs, setDeleteIs] = useState(false);
     const handleCloseModal = () => {
         setDeleteIs(false);
     }
-    console.log(props.value.content)
+    const data = {
+        title: props.value.title,
+        content: props.value.content,
+    }
+    const [showModify, setShowModify] = useState(false);
+
     return (
         <div className={`blog-detail ${props.isHidingDetail ? "hide" : ""}`}>
             <div className="content">
@@ -24,13 +32,16 @@ function Detail(props) {
                     Delete
                 </button>
                 <button className="close-button" onClick={() => {
-                    setDeleteIs(true)
+                    navigate('/modify', {state: data});
                 }}>
                     Modify
                 </button>
             </div>
             {
                 deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal} handleRenewal={props.handleRenewal}/>)
+            }
+            {
+                showModify && (<Modify data={data}/>)
             }
 
         </div>

@@ -76,7 +76,7 @@ function List(props) {
                                 className={isGrid ? "grid-item" : "list-item"}
                                 onClick={() => handleSelectBlog(value)}
                             >
-                                <h5>{value.title}</h5>
+                                <h6>{value.title}</h6>
                                 <p>{value.localDate}</p>
                             </div>
                         ))

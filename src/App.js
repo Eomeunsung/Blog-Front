@@ -8,6 +8,7 @@ import List from "./routes/List";
 import Detail from "./routes/Detail";
 import WriteModal from "./routes/WriteModal";
 import WriteEditor, {mySchema} from './routes/WriteEditor'
+import Modify from "./routes/Modify";
 
 function App() {
   let navigate = useNavigate();
@@ -39,6 +40,7 @@ function App() {
           <Route path="/" element={<List></List>}/>
           <Route path="/write" element={<WriteEditor></WriteEditor>}/>
           <Route path="/detail" element={<Detail></Detail>}/>
+          <Route path="/modify" element={<Modify></Modify>}/>
       </Routes>
     </div>
   );
