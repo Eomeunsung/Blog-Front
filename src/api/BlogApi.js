@@ -61,3 +61,17 @@ export const imgUpload = async (formData) => {
         }
     }
 }
+
+export const blogUpdate = async (data) => {
+    try{
+        const res = await axios.put(`${process.env.REACT_APP_URL}/blog`,data,{
+            headers : {
+                "Content-Type": "application/json",
+            }
+        })
+        console.log("게시물 수정성공");
+    }catch (error) {
+        console.log(error);
+    }
+}
+

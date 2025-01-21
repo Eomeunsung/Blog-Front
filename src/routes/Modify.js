@@ -5,6 +5,7 @@ import ReactQuill from "react-quill";
 import {BiSolidEditAlt} from "react-icons/bi";
 import WriteModal from "./WriteModal";
 import {useLocation} from "react-router-dom";
+import ModifyModal from "./ModifyModal";
 
 
 
@@ -13,9 +14,10 @@ function Modify(props) {
     const data = location.state;
 
     const initState = {
+        id: data.id,
         title: data.title,
         content: data.content,
-        imgUrl:'',
+        imgUrl:null,
     };
     let flag = false;
     const [urlimgList, setUrlimgList] = useState([]);
@@ -112,7 +114,7 @@ function Modify(props) {
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
             {modal && (
-                <WriteModal blog={blog} closeModal={handleCloseModal} urlimgList={urlimgList} />
+                <ModifyModal blog={blog} closeModal={handleCloseModal} urlimgList={urlimgList} />
             )}
         </div>
     );

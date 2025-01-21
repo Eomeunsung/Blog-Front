@@ -11,7 +11,9 @@ function Detail(props) {
     const handleCloseModal = () => {
         setDeleteIs(false);
     }
+
     const data = {
+        id:props.value.id,
         title: props.value.title,
         content: props.value.content,
     }

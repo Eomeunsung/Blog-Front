@@ -10,7 +10,7 @@ const initState = {
     id : 0,
     title : "",
     content:"",
-    imgUrl:""
+    imgUrl:null
 }
 
 function List(props) {
