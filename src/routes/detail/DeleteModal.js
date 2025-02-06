@@ -1,6 +1,6 @@
 import React from "react";
-import './../css/Modal.css';
-import { deleteBlog } from "./../api/BlogApi";
+import '../../css/Modal.css';
+import { deleteBlog } from "../../api/BlogApi";
 
 const DeleteModal = ({ blogId, deleteIs, handleRenewal}) => {
 

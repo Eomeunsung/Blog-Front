@@ -1,14 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "./css/Nav.css";
 import {Routes, Route, useNavigate} from "react-router-dom";
-import Write from "./routes/Write";
-import List from "./routes/List";
-import Detail from "./routes/Detail";
-import WriteModal from "./routes/WriteModal";
-import WriteEditor, {mySchema} from './routes/WriteEditor'
-import Modify from "./routes/Modify";
+import List from "./routes/list/List";
+import Detail from "./routes/detail/Detail";
+import WriteEditor, {mySchema} from './routes/write/WriteEditor'
+import Modify from "./routes/modify/Modify";
+import ChatRoom from "./routes/ChatRoom";
+import { GiTalk } from "react-icons/gi";
+import { IoMdHome } from "react-icons/io";
+import { TfiWrite } from "react-icons/tfi";
+import ChatRoomList from "./routes/ChatRoomList";
 
 function App() {
   let navigate = useNavigate();
@@ -23,11 +26,14 @@ function App() {
           <Navbar.Collapse id="navbar-nav">
             <Nav className="me-auto">
               <Nav.Link onClick={()=>{navigate("/")}} className="custom-nav-link">
-                Home
+                  <IoMdHome />
               </Nav.Link>
               <Nav.Link onClick={()=>{navigate("/write")}}  className="custom-nav-link">
-                Write
+                  <TfiWrite />
               </Nav.Link>
+                <Nav.Link onClick={()=>{navigate("/chatRoom")}} className="custom-nav-link">
+                    <GiTalk />
+                </Nav.Link>
             </Nav>
             <Button variant="outline-light" className="custom-button">
               Login
@@ -41,6 +47,8 @@ function App() {
           <Route path="/write" element={<WriteEditor></WriteEditor>}/>
           <Route path="/detail" element={<Detail></Detail>}/>
           <Route path="/modify" element={<Modify></Modify>}/>
+          <Route path="/chatRoom" element={<ChatRoom></ChatRoom>}/>
+          <Route path="/room" element={<ChatRoomList></ChatRoomList>}/>
       </Routes>
     </div>
   );

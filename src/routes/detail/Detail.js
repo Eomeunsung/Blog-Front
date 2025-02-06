@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import './../css/Detail.css';
+import '../../css/Detail.css';
 import DeleteModal from "./DeleteModal";
 import 'react-quill/dist/quill.snow.css';  // Quill 기본 스타일
-import Modify from "./Modify";
+import Modify from "../modify/Modify";
 import {useNavigate} from "react-router-dom";
+import { MdDelete } from "react-icons/md";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import { FiEdit3 } from "react-icons/fi";
 
 function Detail(props) {
     const navigate = useNavigate();
@@ -26,17 +29,17 @@ function Detail(props) {
                 <p dangerouslySetInnerHTML={{__html: props.value.content}}
                    style={{whiteSpace: 'pre-line'}}></p>
                 <button className="close-button" onClick={props.onClose}>
-                    Close
+                    <IoMdCloseCircleOutline />
                 </button>
                 <button className="close-button" onClick={() => {
                     setDeleteIs(true)
                 }}>
-                    Delete
+                    <MdDelete />
                 </button>
                 <button className="close-button" onClick={() => {
                     navigate('/modify', {state: data});
                 }}>
-                    Modify
+                    <FiEdit3 />
                 </button>
             </div>
             {

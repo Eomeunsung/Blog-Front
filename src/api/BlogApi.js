@@ -10,6 +10,7 @@ export const getBlog  = async () => {
         return res.data.data;
     }catch (error) {
         console.log(error);
+        return false;
     }
 }
 

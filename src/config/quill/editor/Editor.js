@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useLayoutEffect, useRef } from 'react';
 import Quill from "quill";
-import "./../css/Editor.css"
+import "../../../css/Editor.css"
 // Editor is an uncontrolled React component
 const Editor = forwardRef(
     ({ readOnly, defaultValue, onTextChange, onSelectionChange }, ref) => {

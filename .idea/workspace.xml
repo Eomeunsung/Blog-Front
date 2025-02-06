@@ -5,7 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/config/ChangeImg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/initState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/moudle/QuillModules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/ChatRoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/ChatRoomList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Dropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Editor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Editor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/List.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/List.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Write.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Write.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/editor/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/quill/editor/Editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/editor/ToobarOption.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/quill/editor/ToobarOption.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/detail/DeleteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/detail/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/list/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/modify/Modify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ModifyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/modify/ModifyModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Write.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/WriteEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/write/WriteEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/write/WriteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +122,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/config" />
+      <recent name="$PROJECT_DIR$/src/config/quill" />
+      <recent name="$PROJECT_DIR$/src/routes/write" />
+      <recent name="$PROJECT_DIR$/src/routes/modify" />
+      <recent name="$PROJECT_DIR$/src/routes/list" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="blog.main" />
@@ -93,7 +150,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.24807.6" />
       </set>
     </attachedChunks>
   </component>
@@ -122,6 +179,12 @@
       <workItem from="1736601109925" duration="508000" />
       <workItem from="1736692720404" duration="806000" />
       <workItem from="1737386592604" duration="5606000" />
+      <workItem from="1737472886649" duration="4702000" />
+      <workItem from="1737531918058" duration="2941000" />
+      <workItem from="1737612878424" duration="13117000" />
+      <workItem from="1737732004019" duration="6649000" />
+      <workItem from="1738157787535" duration="7000" />
+      <workItem from="1738829407100" duration="5614000" />
     </task>
     <servers />
   </component>
