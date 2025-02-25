@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../../css/List.css'
 import { FiMenu,FiGrid } from "react-icons/fi";
-import Detail from '../detail/Detail'
+import DetailPage from '../detail/DetailPage'
 import {getBlog} from "../../api/BlogApi"
 import {useLocation} from "react-router-dom";
 
@@ -13,7 +13,7 @@ const initState = {
     imgUrl:null
 }
 
-function List(props) {
+function ListPage(props) {
     const [isGrid, setIsGrid] = useState(true); // 상태로 레이아웃 제어
     let [blog, setBlog] = useState({...initState});
     const [connection, setConnection] = useState(true);
@@ -98,7 +98,7 @@ function List(props) {
             )}
 
             {selectedBlog ? (
-                <Detail
+                <DetailPage
                     isHidingDetail={isHidingDetail}
                     onClose={handleCloseDetail}
                     value={selectedBlog}
@@ -126,4 +126,4 @@ function List(props) {
     );
 }
 
-export default List;
+export default ListPage;

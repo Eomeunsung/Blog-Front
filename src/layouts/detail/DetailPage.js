@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import '../../css/Detail.css';
 import DeleteModal from "./DeleteModal";
 import 'react-quill/dist/quill.snow.css';  // Quill 기본 스타일
-import Modify from "../modify/Modify";
+import ModifyPage from "../modify/ModifyPage";
 import {useNavigate} from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { FiEdit3 } from "react-icons/fi";
 
-function Detail(props) {
+function DetailPage(props) {
     const navigate = useNavigate();
     const [deleteIs, setDeleteIs] = useState(false);
     const handleCloseModal = () => {
@@ -46,11 +46,11 @@ function Detail(props) {
                 deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal} handleRenewal={props.handleRenewal}/>)
             }
             {
-                showModify && (<Modify data={data}/>)
+                showModify && (<ModifyPage data={data}/>)
             }
 
         </div>
     );
 }
 
-export default Detail;
+export default DetailPage;

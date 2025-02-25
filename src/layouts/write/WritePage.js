@@ -1,46 +1,33 @@
-import React, {useEffect, useState} from 'react';
-import {formats} from "../../config/quill/editor/ToobarOption";
-import Form from "react-bootstrap/Form";
 import ReactQuill from "react-quill";
-import {BiSolidEditAlt} from "react-icons/bi";
-import {useLocation} from "react-router-dom";
-import ModifyModal from "./ModifyModal";
-import {changeImg} from "../../config/ChangeImg";
+import React, {useEffect, useState} from 'react';
+import {formats} from '../../config/quill/editor/ToobarOption'
+import Form from "react-bootstrap/Form";
+import { BiSolidEditAlt } from "react-icons/bi";
+import WriteModal from "./WriteModal";
+import {changeImg} from "../../config/ChangeImg"
 import {modules} from "../../config/moudle/QuillModules";
 import {initState} from "../../config/initState";
 
-function Modify(props) {
-    const location = useLocation();
-    const data = location.state;
-
-    const [modifiedState, setModifiedState] = useState({
-        ...initState, // 기존 기본값 복사
-        id: data.id,
-        title: data.title,
-        content: data.content,
-    });
-
+function WritePage(props) {
     let flag = false;
     const [urlimgList, setUrlimgList] = useState([]);
     const [nameImg, setNameImg] = useState([]);
 
     const [modal,setModal] = React.useState(false);
-    const [blog, setBlog] = useState({...modifiedState});
+    const [blog, setBlog] = useState({...initState});
     const handleCloseModal = () => {
         setModal(false); // 모달 닫기
     };
-
-    const handleChangeTitle = (e) => {
-        setBlog({ ...blog, [e.target.name]: e.target.value });
-    };
-
-    const handleChangeBody = (value) => {
-        setBlog({ ...blog, content: value });
-    };
-
+    const handleChangeTitle=(e)=>{
+        blog[e.target.name]=e.target.value
+    }
+    const handleChangeBody=(e)=>{
+        blog["content"] = e;
+    }
     useEffect(() => {
         if (urlimgList.length > 0) {
             blog["imgUrl"] = nameImg;
+            console.log("이미지 이름들 "+blog["imgUrl"]);
         }
     }, [nameImg]); // urlimgList가 변경될 때마다 실행됨
 
@@ -61,7 +48,6 @@ function Modify(props) {
                 type="text"
                 placeholder="제목 입력"
                 className="custom-title-input"
-                value = {blog.title}
                 onChange={handleChangeTitle}
                 style={{width: "100%", marginTop:"20px"}}
             />
@@ -71,7 +57,6 @@ function Modify(props) {
                 name="content"
                 modules={modules}
                 formats={formats}
-                value={blog.content}
                 placeholder={"내용을 입력하세요..."}
                 onChange={handleChangeBody}
             />
@@ -84,10 +69,10 @@ function Modify(props) {
                 style={{ width: "40px", height: "40px", cursor: "pointer" }}
             />
             {modal && (
-                <ModifyModal blog={blog} closeModal={handleCloseModal} urlimgList={urlimgList} />
+                <WriteModal blog={blog} closeModal={handleCloseModal} urlimgList={urlimgList} />
             )}
         </div>
     );
 }
 
-export default Modify;
+export default WritePage;

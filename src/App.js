@@ -3,18 +3,42 @@ import './App.css';
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "./css/Nav.css";
 import {Routes, Route, useNavigate} from "react-router-dom";
-import List from "./routes/list/List";
-import Detail from "./routes/detail/Detail";
-import WriteEditor, {mySchema} from './routes/write/WriteEditor'
-import Modify from "./routes/modify/Modify";
-import ChatRoom from "./routes/ChatRoom";
+import ListPage from "./layouts/list/ListPage";
+import DetailPage from "./layouts/detail/DetailPage";
+import WritePage, {mySchema} from './layouts/write/WritePage'
+import ModifyPage from "./layouts/modify/ModifyPage";
+import ChatRoom from "./layouts/ChatRoom";
 import { GiTalk } from "react-icons/gi";
 import { IoMdHome } from "react-icons/io";
 import { TfiWrite } from "react-icons/tfi";
-import ChatRoomList from "./routes/ChatRoomList";
+import ChatRoomList from "./layouts/ChatRoomList";
+import SignInPage from "./layouts/users/SignInPage"
+import SignUpPage from "./layouts/users/SignUpPage"
+import {useEffect, useState} from "react";
 
 function App() {
   let navigate = useNavigate();
+  const [isLogin, setLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+    useEffect(() => {
+        const token  = localStorage.getItem("jwt");
+        const name = localStorage.getItem("name");
+        if(token){
+            setLogin(true);
+            setUserInfo({
+                name: name,
+            })
+        }
+    }, []);
+
+    const handleLogout =()=>{
+        localStorage.removeItem("jwt");
+        localStorage.removeItem("name");
+        setLogin(false);
+        setUserInfo(null);
+        navigate("/");
+    }
+
   return (
     <div className="App">
         <Navbar expand="lg" className="custom-navbar">
@@ -35,20 +59,59 @@ function App() {
                     <GiTalk />
                 </Nav.Link>
             </Nav>
-            <Button variant="outline-light" className="custom-button">
-              Login
-            </Button>
+              <Nav>
+                  {isLogin ? (
+                      <>
+                          <Button
+                              variant="outline-light"
+                              className="custom-button"
+                              style={{ marginRight: '10px' }} // 오른쪽에 10px 간격 추가
+                              onClick={() => {}}
+                          >
+                              {userInfo?.name} {/* 사용자 이름 버튼 */}
+                          </Button>
+                          <Button
+                              variant="outline-light"
+                              className="custom-button"
+                              onClick={handleLogout}
+                              style={{ marginRight: '10px' }} // 오른쪽에 10px 간격 추가
+                          >
+                              Logout
+                          </Button>
+                      </>
+                  ) : (
+                      <>
+                          <Button
+                              variant="outline-light"
+                              className="custom-button"
+                              onClick={() => navigate("/login")}
+                              style={{ marginRight: '10px' }}
+                          >
+                              SignIn
+                          </Button>
+                          <Button
+                              variant="outline-light"
+                              className="custom-button"
+                              onClick={() => navigate("/signup")}
+                          >
+                              SignUp
+                          </Button>
+                      </>
+                  )}
+              </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       <Routes>
-          <Route path="/" element={<List></List>}/>
-          <Route path="/write" element={<WriteEditor></WriteEditor>}/>
-          <Route path="/detail" element={<Detail></Detail>}/>
-          <Route path="/modify" element={<Modify></Modify>}/>
+          <Route path="/" element={<ListPage></ListPage>}/>
+          <Route path="/write" element={<WritePage></WritePage>}/>
+          <Route path="/detail" element={<DetailPage></DetailPage>}/>
+          <Route path="/modify" element={<ModifyPage></ModifyPage>}/>
           <Route path="/chatRoom" element={<ChatRoom></ChatRoom>}/>
           <Route path="/room" element={<ChatRoomList></ChatRoomList>}/>
+          <Route path="/login" element={<SignInPage></SignInPage>}/>
+          <Route path="/signup" element={<SignUpPage></SignUpPage>}/>
       </Routes>
     </div>
   );
