@@ -39,6 +39,16 @@ function App() {
         navigate("/");
     }
 
+    const handleWirte=()=>{
+        const token = localStorage.getItem("jwt");
+        if(token){
+            navigate("/write");
+        }else{
+            alert("로그인 후 가능합니다.")
+            navigate("/login");
+        }
+    }
+
   return (
     <div className="App">
         <Navbar expand="lg" className="custom-navbar">
@@ -52,7 +62,7 @@ function App() {
               <Nav.Link onClick={()=>{navigate("/")}} className="custom-nav-link">
                   <IoMdHome />
               </Nav.Link>
-              <Nav.Link onClick={()=>{navigate("/write")}}  className="custom-nav-link">
+              <Nav.Link onClick={()=>{handleWirte()}}  className="custom-nav-link">
                   <TfiWrite />
               </Nav.Link>
                 <Nav.Link onClick={()=>{navigate("/chatRoom")}} className="custom-nav-link">

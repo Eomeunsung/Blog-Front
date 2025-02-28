@@ -19,9 +19,22 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
             const imgurl = await imgUpload(formData)
             blog.imgUrl = imgurl;
         }
-        console.log("데이터 보낵기 "+blog.imgUrl+" "+blog.title+" "+blog.content)
-        console.log( await writeBlog(blog));
-        navigate("/")
+        // console.log("데이터 보낵기 "+blog.imgUrl+" "+blog.title+" "+blog.content)
+        await writeBlog(blog)
+            .then((result)=>{
+            navigate("/")
+        })
+            .catch((err)=>{
+                console.log("에러 "+err)
+                if(err===401 || err===403){
+                    localStorage.removeItem("jwt");
+                    localStorage.removeItem("name");
+                    alert("로그인 다시 진행해주십시오");
+                    navigate("/login")
+                }
+
+            })
+
         closeModal(); // 모달 닫기
     };
 

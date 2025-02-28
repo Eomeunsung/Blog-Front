@@ -5,12 +5,12 @@ export const getBlog  = async () => {
         const res = await axios.get(`${process.env.REACT_APP_URL}/blog`,{
             headers : {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         });
         return res.data.data;
     }catch (error) {
-        console.log(error);
-        return false;
+        return error.response.status;
     }
 }
 
@@ -19,10 +19,13 @@ export const writeBlog = async (data) => {
         const res = await axios.post(`${process.env.REACT_APP_URL}/blog/write`,data,{
             headers : {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         })
     }catch (error) {
         console.log(error);
+        console.log(error.response.status);
+        throw error.response.status
     }
 }
 

@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/UserApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/localStrage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/Login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/SignUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/users/SignInPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/users/SignUpPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ChatRoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ChatRoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ChatRoomList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/detail/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/detail/DeleteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/detail/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/detail/DetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/list/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/list/ListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/modify/Modify.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/modify/ModifyPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/modify/ModifyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/modify/ModifyModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/write/WriteEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/write/WritePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/write/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +142,7 @@
       <workItem from="1738157787535" duration="7000" />
       <workItem from="1738829407100" duration="6355000" />
       <workItem from="1739255320552" duration="19019000" />
-      <workItem from="1740444074557" duration="9167000" />
+      <workItem from="1740444074557" duration="18834000" />
     </task>
     <servers />
   </component>
