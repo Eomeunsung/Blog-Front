@@ -21,6 +21,7 @@ function ListPage(props) {
     const [isHidingDetail, setIsHidingDetail] = useState(false); // 애니메이션 상태
     const [renewal, setRenewal] = useState(false);
     const location = useLocation(); // 현재 URL 경로 가져오기
+    const [deleteBlog, setDeleteBlog] = useState(false); //블로그 삭제 수정 기능 막기
 
     const handleRenewal = () =>{
         setRenewal(true);
@@ -103,6 +104,7 @@ function ListPage(props) {
                     onClose={handleCloseDetail}
                     value={selectedBlog}
                     handleRenewal={handleRenewal}
+                    deleteBlog={deleteBlog}
                 />
             ) : (
                 /* 리스트 렌더링 */

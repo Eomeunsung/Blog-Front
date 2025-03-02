@@ -21,6 +21,7 @@ function DetailPage(props) {
         content: props.value.content,
     }
     const [showModify, setShowModify] = useState(false);
+    console.log("받은 아이디 "+props.value.id)
 
     return (
         <div className={`blog-detail ${props.isHidingDetail ? "hide" : ""}`}>
@@ -31,19 +32,27 @@ function DetailPage(props) {
                 <button className="close-button" onClick={props.onClose}>
                     <IoMdCloseCircleOutline />
                 </button>
-                <button className="close-button" onClick={() => {
-                    setDeleteIs(true)
-                }}>
-                    <MdDelete />
-                </button>
-                <button className="close-button" onClick={() => {
-                    navigate('/modify', {state: data});
-                }}>
-                    <FiEdit3 />
-                </button>
+                {props.deleteBlog ? (
+                    <>
+                        <button className="close-button" onClick={() => {
+                            setDeleteIs(true)
+                        }}>
+                            <MdDelete />
+                        </button>
+                        <button className="close-button" onClick={() => {
+                            navigate('/modify', {state: data});
+                        }}>
+                            <FiEdit3 />
+                        </button>
+                    </>
+                ):(
+                    <></>
+                )}
+
+
             </div>
             {
-                deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal} handleRenewal={props.handleRenewal}/>)
+                deleteIs && (<DeleteModal blogId={props.value.id} deleteIs={handleCloseModal} handleRenewal={props.handleRenewal} handleLayout={props.handleLayout}/>)
             }
             {
                 showModify && (<ModifyPage data={data}/>)

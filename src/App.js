@@ -15,6 +15,7 @@ import ChatRoomList from "./layouts/ChatRoomList";
 import SignInPage from "./layouts/users/SignInPage"
 import SignUpPage from "./layouts/users/SignUpPage"
 import {useEffect, useState} from "react";
+import MyProfile from "./layouts/users/MyProfile";
 
 function App() {
   let navigate = useNavigate();
@@ -76,8 +77,7 @@ function App() {
                               variant="outline-light"
                               className="custom-button"
                               style={{ marginRight: '10px' }} // 오른쪽에 10px 간격 추가
-                              onClick={() => {}}
-                          >
+                              onClick={() => {navigate("/myprofile")}}>
                               {userInfo?.name} {/* 사용자 이름 버튼 */}
                           </Button>
                           <Button
@@ -122,6 +122,7 @@ function App() {
           <Route path="/room" element={<ChatRoomList></ChatRoomList>}/>
           <Route path="/login" element={<SignInPage></SignInPage>}/>
           <Route path="/signup" element={<SignUpPage></SignUpPage>}/>
+          <Route path="/myprofile" element={<MyProfile></MyProfile>}/>
       </Routes>
     </div>
   );

@@ -1,14 +1,24 @@
 import React from "react";
 import '../../css/Modal.css';
 import { deleteBlog } from "../../api/BlogApi";
+import {useNavigate} from "react-router-dom";
 
-const DeleteModal = ({ blogId, deleteIs, handleRenewal}) => {
+const DeleteModal = ({ blogId, deleteIs, handleRenewal, handleLayout}) => {
+    const navigate = useNavigate();
 
     const handleAdd = async () => {
-        await deleteBlog(blogId);
-        handleRenewal()
-
-        deleteIs(); // 모달 닫기
+        await deleteBlog(blogId)
+            .then((res) => {
+                console.log("삭제 성공 "+res)
+                // 블로그 삭제 후 갱신
+                handleRenewal(); // 블로그 삭제 후 갱신
+                deleteIs(); // 모달 닫기
+                handleLayout();
+                // navigate("/myprofile");  // 삭제 후 프로필로 이동
+            })
+            .catch((err) => {
+                alert("다시 시도해 주시기 바랍니다.")
+            })
     };
 
     return (

@@ -22,7 +22,7 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
         // console.log("데이터 보낵기 "+blog.imgUrl+" "+blog.title+" "+blog.content)
         await writeBlog(blog)
             .then((result)=>{
-            navigate("/")
+            navigate("/myprofile")
         })
             .catch((err)=>{
                 console.log("에러 "+err)

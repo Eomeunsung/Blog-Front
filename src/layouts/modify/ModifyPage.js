@@ -44,6 +44,7 @@ function ModifyPage(props) {
         }
     }, [nameImg]); // urlimgList가 변경될 때마다 실행됨
 
+
     const handleChangeImg=()=>{
         const {updatedContent, newUrlimgList, newNameimg} = changeImg(blog["content"])
         setUrlimgList((prevList) => [...prevList, ...newUrlimgList]);

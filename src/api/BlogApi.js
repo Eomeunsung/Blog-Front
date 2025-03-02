@@ -2,14 +2,14 @@ import axios from "axios";
 
 export const getBlog  = async () => {
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/blog`,{
+        const res = await axios.get(`${process.env.REACT_APP_URL}/blog/list`,{
             headers : {
                 "Content-Type": "application/json",
-                Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         });
         return res.data.data;
     }catch (error) {
+        console.log(error);
         return error.response.status;
     }
 }
@@ -34,18 +34,19 @@ export const deleteBlog = async (id) => {
         const res = await axios.delete(`${process.env.REACT_APP_URL}/blog/${id}`,{
             headers : {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         })
-        console.log("삭제 성공");
+        return res.data;
     }catch (error) {
-        console.log(error);
+        throw error;
     }
 }
 
 export const imgUpload = async (formData) => {
     console.log("보내기 전 "+formData.getAll("files"));
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/upload`,formData,{
+        const res = await axios.post(`${process.env.REACT_APP_URL}/blog/upload`,formData,{
             headers:{
                 "Content-Type": "multipart/form-data",
             }

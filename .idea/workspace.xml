@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/css/MyProfile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/users/MyProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/UserApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,11 +147,23 @@
       <workItem from="1738157787535" duration="7000" />
       <workItem from="1738829407100" duration="6355000" />
       <workItem from="1739255320552" duration="19019000" />
-      <workItem from="1740444074557" duration="18834000" />
+      <workItem from="1740444074557" duration="20713000" />
+      <workItem from="1740730265891" duration="11648000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/index.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

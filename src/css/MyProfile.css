@@ -1,0 +1,113 @@
+/* 전체 컨테이너 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 프로필 컨테이너 스타일 */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* 프로필 최대 너비 설정 */
+    margin: 0 auto;
+    margin-bottom: 40px; /* 프로필과 블로그 사이에 간격 추가 */
+}
+
+/* 프로필 헤더 */
+.profile-header {
+    display: flex;
+    align-items: center; /* 사진과 정보를 가로로 정렬 */
+    text-align: left;
+}
+
+/* 프로필 사진 */
+.profile-avatar {
+    width: 80px; /* 프로필 사진 크기 축소 */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ddd;
+    margin-right: 20px; /* 사진과 텍스트 사이에 간격 추가 */
+}
+
+/* 프로필 정보 */
+.profile-info {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* 프로필 이름 */
+.profile-info h2 {
+    font-size: 1.5rem; /* 이름 크기 축소 */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 프로필 이메일 */
+.profile-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* 회원가입 날짜 스타일 */
+.created-at {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* 블로그 목록 스타일 */
+.blogs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 250px에서 1fr 크기까지 자동 조정 */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 블로그 카드 스타일 */
+.blog-card {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 블로그 카드 호버 효과 */
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 블로그 제목 스타일 */
+.blog-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 블로그 날짜 스타일 */
+.blog-card p {
+    font-size: 0.875rem;
+    color: #888;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* 비어 있을 때 메시지 */
+.empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+}
