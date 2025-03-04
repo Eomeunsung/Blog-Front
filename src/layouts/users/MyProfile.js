@@ -32,7 +32,8 @@ const MyProfile = () => {
     useEffect(() => {
        myProfile()
            .then((result)=>{
-            setBlogs(result.data);
+            setBlogs(result.data.blog);
+            setUserProfile(result.data)
             setLoadingBlogs(false); // 블로그 로딩 완료
        })
            .catch((err)=>{
@@ -79,8 +80,8 @@ const MyProfile = () => {
                         />
                         <div className="profile-info">
                             <h2>{userProfile.name}</h2>
-                            <p>{"이메일"}</p>
-                            <p className="created-at">회원가입일: {"회원가입 날짜"}</p>
+                            <p>{userProfile.email}</p>
+                            <p className="created-at">회원가입일: {userProfile.createAt}</p>
                         </div>
                     </div>
                 )}

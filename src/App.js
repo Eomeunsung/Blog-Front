@@ -94,14 +94,15 @@ function App() {
                           <Button
                               variant="outline-light"
                               className="custom-button"
+                              style={{ marginRight: '10px' }} // 오른쪽에 10px 간격 추가
                               onClick={() => navigate("/login")}
-                              style={{ marginRight: '10px' }}
                           >
                               SignIn
                           </Button>
                           <Button
                               variant="outline-light"
                               className="custom-button"
+                              style={{ marginRight: '10px' }} // 오른쪽에 10px 간격 추가
                               onClick={() => navigate("/signup")}
                           >
                               SignUp

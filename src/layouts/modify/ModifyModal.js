@@ -17,7 +17,7 @@ function ModifyModal({ blog, closeModal, urlimgList  }) {
             blog.imgUrl = imgurl;
         }
         await blogUpdate(blog)
-        navigate("/")
+        navigate("/myprofile")
         closeModal(); // 모달 닫기
     };
 

@@ -72,9 +72,10 @@ export const blogUpdate = async (data) => {
         const res = await axios.put(`${process.env.REACT_APP_URL}/blog`,data,{
             headers : {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         })
-        console.log("게시물 수정성공");
+        console.log(res);
     }catch (error) {
         console.log(error);
     }
