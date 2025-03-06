@@ -42,20 +42,22 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
 
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="basic-modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2 className="modal-title">게시물 올리시겠습니까?</h2>
                 <div className="modal-buttons">
                     <button
                         className="modal-button modal-confirm"
                         onClick={handleAdd}
                     >
-                        <IoMdAdd/>
+                        {/*<IoMdAdd/>*/}
+                        O
                     </button>
                     <button
                         className="modal-button modal-cancel"
                         onClick={closeModal} // X 버튼 클릭 시 모달 닫기
                     >
-                        <RiSubtractFill/>
+                        {/*<RiSubtractFill/>*/}
+                        X
                     </button>
                 </div>
             </div>

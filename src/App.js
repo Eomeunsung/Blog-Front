@@ -16,20 +16,41 @@ import SignInPage from "./layouts/users/SignInPage"
 import SignUpPage from "./layouts/users/SignUpPage"
 import {useEffect, useState} from "react";
 import MyProfile from "./layouts/users/MyProfile";
+import MyProfileUpdateModal from "./layouts/users/MyProfileUpdateModal";
 
 function App() {
   let navigate = useNavigate();
   const [isLogin, setLogin] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
+
     useEffect(() => {
-        const token  = localStorage.getItem("jwt");
+        const token = localStorage.getItem("jwt");
         const name = localStorage.getItem("name");
-        if(token){
+
+        if (token) {
             setLogin(true);
             setUserInfo({
                 name: name,
-            })
+            });
+        } else {
+            setLogin(false);
+            setUserInfo(null);
         }
+
+        // localStorage의 변화를 감지하는 이벤트 리스너
+        const handleStorageChange = () => {
+            const updatedName = localStorage.getItem("name");
+            setUserInfo((prevState) => ({
+                ...prevState,
+                name: updatedName,
+            }));
+        };
+
+        window.addEventListener("storage", handleStorageChange);
+
+        return () => {
+            window.removeEventListener("storage", handleStorageChange);
+        };
     }, []);
 
     const handleLogout =()=>{
@@ -124,6 +145,7 @@ function App() {
           <Route path="/login" element={<SignInPage></SignInPage>}/>
           <Route path="/signup" element={<SignUpPage></SignUpPage>}/>
           <Route path="/myprofile" element={<MyProfile></MyProfile>}/>
+          <Route path="/myprofile/update" element={<MyProfileUpdateModal></MyProfileUpdateModal>}/>
       </Routes>
     </div>
   );

@@ -46,3 +46,17 @@ export const myProfile  = async () => {
     }
 }
 
+export const myProfileUpdate  = async (data) => {
+    try{
+        const res = await axios.put(`${process.env.REACT_APP_URL}/user/myprofile`, data,{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        });
+        return res.data;
+    }catch (error) {
+        throw error;
+    }
+}
+

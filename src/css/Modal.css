@@ -11,8 +11,10 @@
     z-index: 1000;
 }
 
-.modal-content {
-    background: #fff;
+.basic-modal-content {
+    border: 2px solid transparent;
+    background-image: linear-gradient(to right, #6e8efb, #a777e3);
+    background-clip: padding-box; /* 그라디언트 효과만 테두리에 적용 */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -41,19 +43,21 @@
 }
 
 .modal-confirm {
-    background-color: #4caf50;
     color: white;
+    background: linear-gradient(135deg, #6e8efb, #4e73df); /* 파란색 계열의 그라디언트 */
 }
 
 .modal-confirm:hover {
-    background-color: #45a049;
+    background-color: #5c9bf8; /* 더 밝은 파란색으로 전환 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
 }
 
 .modal-cancel {
-    background-color: #f44336;
     color: white;
+    background: linear-gradient(135deg, #a777e3, #7c4dff); /* 보라색 계열의 그라디언트 */
 }
 
 .modal-cancel:hover {
-    background-color: #e53935;
+    background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
 }

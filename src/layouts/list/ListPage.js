@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import '../../css/List.css'
-import { FiMenu,FiGrid } from "react-icons/fi";
 import DetailPage from '../detail/DetailPage'
 import {getBlog} from "../../api/BlogApi"
 import {useLocation} from "react-router-dom";
@@ -14,7 +13,6 @@ const initState = {
 }
 
 function ListPage(props) {
-    const [isGrid, setIsGrid] = useState(true); // 상태로 레이아웃 제어
     let [blog, setBlog] = useState({...initState});
     const [connection, setConnection] = useState(true);
     const [selectedBlog, setSelectedBlog] = useState({...initState}); // 선택된 블로그 데이터
@@ -85,34 +83,22 @@ function ListPage(props) {
                 </p>
             )}
 
-            {/* 레이아웃 변경 버튼 */}
-            {isGrid ? (
-                <FiMenu
-                    style={{width: "40px", height: "40px", cursor: "pointer"}}
-                    onClick={() => setIsGrid(!isGrid)}
-                />
-            ) : (
-                <FiGrid
-                    style={{width: "40px", height: "40px", cursor: "pointer"}}
-                    onClick={() => setIsGrid(!isGrid)}
-                />
-            )}
 
             {selectedBlog ? (
                 <DetailPage
                     isHidingDetail={isHidingDetail}
                     onClose={handleCloseDetail}
-                    value={selectedBlog}
+                    value={selectedBlog.id}
                     handleRenewal={handleRenewal}
                     deleteBlog={deleteBlog}
                 />
             ) : (
                 /* 리스트 렌더링 */
-                <div className={isGrid ? "grid-container" : "list-container"}>
+                <div className="grid-container">
                     {blog.length > 0  ? (
                         blog.map((value, index) => (
                             <div
-                                className={isGrid ? "grid-item" : "list-item"}
+                                className="grid-item"
                                 onClick={() => handleSelectBlog(value)}
                             >
                                 <h6>{value.title}</h6>

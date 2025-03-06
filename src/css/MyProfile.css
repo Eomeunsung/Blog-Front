@@ -7,44 +7,53 @@
 
 /* 프로필 컨테이너 스타일 */
 .profile-container {
-    display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 30px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* 프로필 최대 너비 설정 */
+    max-width: 600px;
     margin: 0 auto;
-    margin-bottom: 40px; /* 프로필과 블로그 사이에 간격 추가 */
+    margin-bottom: 40px;
 }
 
 /* 프로필 헤더 */
 .profile-header {
     display: flex;
-    align-items: center; /* 사진과 정보를 가로로 정렬 */
-    text-align: left;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-/* 프로필 사진 */
+/* 프로필 사진 스타일 */
 .profile-avatar {
-    width: 80px; /* 프로필 사진 크기 축소 */
+
+    width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #ddd;
-    margin-right: 20px; /* 사진과 텍스트 사이에 간격 추가 */
+}
+
+/* 프로필 사진 컨테이너 */
+.profile-avatar-container {
+    gap: 30px; /* 사진과 정보 간의 간격을 늘림 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 프로필 정보 */
 .profile-info {
-    font-size: 1.1rem;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 /* 프로필 이름 */
 .profile-info h2 {
-    font-size: 1.5rem; /* 이름 크기 축소 */
+    font-size: 1.75rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
@@ -54,20 +63,50 @@
 .profile-info p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-/* 회원가입 날짜 스타일 */
+/* 회원가입 날짜 */
 .created-at {
     font-size: 0.9rem;
     color: #888;
     font-style: italic;
 }
 
+/* 프로필 버튼들 */
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+.profile-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-buttons button:hover {
+    background: linear-gradient(135deg, #5a78e4, #8a5fd1);
+    transform: translateY(-2px);
+}
+
+.profile-buttons button:active {
+    transform: translateY(1px);
+}
+
 /* 블로그 목록 스타일 */
 .blogs-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 250px에서 1fr 크기까지 자동 조정 */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
 }
@@ -111,3 +150,7 @@
     font-size: 1.2rem;
     color: #777;
 }
+
+
+
+

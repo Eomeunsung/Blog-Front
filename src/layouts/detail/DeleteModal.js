@@ -23,7 +23,7 @@ const DeleteModal = ({ blogId, deleteIs, handleRenewal, handleLayout}) => {
 
     return (
         <div className="modal-overlay" onClick={deleteIs}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="basic-modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2 className="modal-title">게시물 삭제하시겠습니까?</h2>
                 <div className="modal-buttons">
                     <button

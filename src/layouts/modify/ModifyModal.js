@@ -23,7 +23,7 @@ function ModifyModal({ blog, closeModal, urlimgList  }) {
 
     return (
         <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="basic-modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2 className="modal-title">게시물 수정하시겠습니까?</h2>
                 <div className="modal-buttons">
                     <button
