@@ -11,13 +11,20 @@ const profileData={
     name:"",
 
 }
+const init={
+    id:0,
+    title:"",
+    content:"",
+    createAt:"",
+    comments:[]
+}
 const MyProfile = () => {
     const [userProfile, setUserProfile] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const [loadingProfile, setLoadingProfile] = useState(true);
     const [loadingBlogs, setLoadingBlogs] = useState(true);
 
-    const [selectedBlog, setSelectedBlog] = useState({ ...initState });
+    const [selectedBlog, setSelectedBlog] = useState({ ...init });
     const [isHidingDetail, setIsHidingDetail] = useState(false);
     const [renewal, setRenewal] = useState(false);
     const [layout, setLayout] = useState(false);
@@ -58,6 +65,7 @@ const MyProfile = () => {
 
     const handleSelectBlog = (blog) => {
         setSelectedBlog(blog);
+        console.log("셀렉트 블로그 "+JSON.stringify(selectedBlog.id));
         setIsHidingDetail(false);
         setLayout(true);
     };
@@ -110,11 +118,12 @@ const MyProfile = () => {
                     )}
                     </div>
 
-                {selectedBlog && layout ? (
+                {/*{selectedBlog && layout ? (*/}
+            {layout ? (
                 <DetailPage
                     isHidingDetail={isHidingDetail}
                     onClose={handleCloseDetail}
-                    value={selectedBlog}
+                    id={selectedBlog}
                     handleRenewal={handleRenewal}
                     deleteBlog={deleteBlog}
                     handleLayout={handleLayout}

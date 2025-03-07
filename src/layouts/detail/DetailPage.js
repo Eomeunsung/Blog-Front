@@ -7,20 +7,22 @@ import { useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { FiEdit3 } from "react-icons/fi";
-import { getDetailBlog } from "../../api/BlogApi";
+import { getDetailBlog, commentWrite } from "../../api/BlogApi";
 
 function DetailPage(props) {
-    console.log("블로그 아이디 "+props.value)
+
     const navigate = useNavigate();
     const [deleteIs, setDeleteIs] = useState(false);
     const [blogData, setBlogData] = useState({
-        id: "",
         title: "",
         content: "",
+        createAt:"",
         comments: []
     });
     const [comment, setComment] = useState('');
-    const [comments, setComments] = useState([]); // 댓글 목록 저장
+    const [commentFlag, setCommentFlag] = useState(false);
+
+
 
     const handleCloseModal = () => {
         setDeleteIs(false);
@@ -28,30 +30,50 @@ function DetailPage(props) {
 
     // Fetch blog details when component mounts
     useEffect(() => {
-        getDetailBlog(props.value)
-            .then((res) => {
-                console.log("불러오기 성공 "+res)
+        if(props.value!=0){
+            // console.log("블로그 아이디 "+props.value)
+            getDetailBlog(props.value)
+                .then((res) => {
+                    setBlogData(res)
+                    // console.log("성공 "+JSON.stringify(res))
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
 
-                // const { title, content, comment } = res.data;
-                // setBlogData({ title, content, comments: comment || [] }); // Set blog data
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [props.value]); // Ensure it triggers on `props.value` change
+    }, [props.value, commentFlag]); // Ensure it triggers on `props.value` change
 
     // 댓글 관리
     const handleCommentChange = (e) => {
         setComment(e.target.value);
     };
 
-    const handleCommentSubmit = (e) => {
-        e.preventDefault();
-        if (comment) {
-            setComments([...comments, comment]);
-            setComment('');
+    const handleCommentWrite = () => {
+        if (!comment.trim()) { // ✅ 댓글이 비어있을 경우 체크
+            alert("댓글을 입력해 주세요.");
+            return;
         }
+
+        const commentData = {
+            blogId: props.value,
+            content: comment,
+        };
+
+        commentWrite(commentData)
+            .then((res) => {
+                setCommentFlag(!commentFlag);
+                setComment(''); // 입력창 초기화
+            })
+            .catch((err) => {
+                if(err===401){
+                    alert("로그인 후 가능 합니다.");
+                    window.location.href="/login";
+                }
+                // console.log(JSON.stringify(err))
+            });
     };
+
 
     // Modify blog navigation
     const handleModifyClick = () => {
@@ -83,29 +105,35 @@ function DetailPage(props) {
             {/* 댓글 창 */}
             <div className="comment-section">
                 <h3>댓글</h3>
-                <form onSubmit={handleCommentSubmit}>
-                    <textarea
-                        value={comment}
-                        onChange={handleCommentChange}
-                        placeholder="댓글을 입력하세요"
-                        rows="4"
-                        style={{ width: '100%', padding: '10px', borderRadius: '5px', marginBottom: '10px' }}
-                    />
-                    <button type="submit" className="comment-submit-button">댓글 남기기</button>
-                </form>
+                <textarea
+                    value={comment}
+                    onChange={handleCommentChange}
+                    placeholder="댓글을 입력하세요"
+                    rows="4"
+                    style={{ width: '100%', padding: '10px', borderRadius: '5px', marginBottom: '10px' }}
+                />
+                <button className="comment-submit-button" onClick={()=>{handleCommentWrite()}}>댓글 남기기</button>
 
                 {/* 댓글 목록 */}
                 <div className="comments-list">
-                    {comments.length > 0 ? (
-                        comments.map((c, index) => (
-                            <div key={index} className="comment">
-                                <p>{c}</p>
-                            </div>
-                        ))
+                    {(blogData.comments ?? []).length > 0 ?(
+                        blogData.comments
+                            .sort((a, b) => b.id - a.id) // ID를 기준으로 내림차순 정렬
+                            .map((c, index) => (
+                                <div key={index} className="comment-card">
+                                    <div className="comment-header">
+                                        <span className="comment-author">{c.name}</span>
+                                        <span className="comment-date">{c.createAt}</span>
+                                    </div>
+                                    <p className="comment-content">{c.content}</p>
+                                </div>
+                            ))
                     ) : (
-                        <p>댓글이 없습니다.</p>
+                        <p className="no-comments">댓글이 없습니다.</p>
                     )}
                 </div>
+
+
             </div>
 
             {deleteIs && (

@@ -21,7 +21,7 @@ export const getDetailBlog  = async (id) => {
                 "Content-Type": "application/json",
             }
         });
-        console.log("불러오기2 "+res.data.data)
+        // console.log("불러오기2 "+JSON.stringify(res.data.data))
         return res.data.data;
     }catch (error) {
         console.log(error);
@@ -30,6 +30,7 @@ export const getDetailBlog  = async (id) => {
 }
 
 export const writeBlog = async (data) => {
+    console.log("받아온 데이터 "+JSON.stringify(data))
     try{
         const res = await axios.post(`${process.env.REACT_APP_URL}/blog/write`,data,{
             headers : {
@@ -96,4 +97,22 @@ export const blogUpdate = async (data) => {
         console.log(error);
     }
 }
+
+export const commentWrite = async (data) => {
+    console.log("댓글 데이터 "+data.blogId+" "+data.content)
+    try{
+        const res = await axios.post(`${process.env.REACT_APP_URL}/comment`,data,{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        })
+        console.log(res.data);
+        return res.data.data;
+    }catch (error) {
+        console.log(error)
+        throw error.response.status;
+    }
+}
+
 

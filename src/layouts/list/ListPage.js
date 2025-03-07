@@ -20,6 +20,7 @@ function ListPage(props) {
     const [renewal, setRenewal] = useState(false);
     const location = useLocation(); // 현재 URL 경로 가져오기
     const [deleteBlog, setDeleteBlog] = useState(false); //블로그 삭제 수정 기능 막기
+    const [detailBlog, setDetailBlog] = useState(false);
 
     const handleRenewal = () =>{
         setRenewal(true);
