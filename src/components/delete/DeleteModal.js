@@ -3,7 +3,7 @@ import '../../css/Modal.css';
 import { deleteBlog } from "../../api/BlogApi";
 import {useNavigate} from "react-router-dom";
 
-const DeleteModal = ({ blogId, deleteIs, handleRenewal, handleLayout}) => {
+const DeleteModal = ({ blogId, deleteIs, handleRenewal, onClose}) => {
     const navigate = useNavigate();
 
     const handleAdd = async () => {
@@ -13,7 +13,7 @@ const DeleteModal = ({ blogId, deleteIs, handleRenewal, handleLayout}) => {
                 // 블로그 삭제 후 갱신
                 handleRenewal(); // 블로그 삭제 후 갱신
                 deleteIs(); // 모달 닫기
-                handleLayout();
+                onClose()
                 // navigate("/myprofile");  // 삭제 후 프로필로 이동
             })
             .catch((err) => {

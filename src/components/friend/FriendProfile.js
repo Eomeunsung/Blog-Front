@@ -1,37 +1,20 @@
-import React, { useState, useEffect } from "react";
-import "./../../css/MyProfile.css";
-import { myProfile } from "../../api/UserApi";
-import { initState } from "../../config/initState";
+import React, {useEffect, useState} from 'react';
+import {useNavigate} from "react-router-dom";
+import {friendProfile} from "./../../api/FriendApi"
 import DetailPage from "../detail/DetailPage";
-import MyProfileUpdateModal from "./MyProfileUpdateModal";
+import "./../../css/MyProfile.css"
 
-
-const profileData={
-    email:"",
-    name:"",
-
-}
-const init={
-    id:0,
-    title:"",
-    content:"",
-    createAt:"",
-    comments:[]
-}
-const MyProfile = () => {
+function FriendProfile(props) {
     const [userProfile, setUserProfile] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const [loadingProfile, setLoadingProfile] = useState(true);
     const [loadingBlogs, setLoadingBlogs] = useState(true);
 
-    const [selectedBlog, setSelectedBlog] = useState({ ...init });
+    const [selectedBlog, setSelectedBlog] = useState();
     const [isHidingDetail, setIsHidingDetail] = useState(false);
     const [renewal, setRenewal] = useState(false);
     const [layout, setLayout] = useState(false);
     const [deleteBlog, setDeleteBlog] = useState(true);
-
-
-    const [modal, setModal] = useState(false);
 
     useEffect(() => {
         const name = localStorage.getItem("name");
@@ -42,45 +25,37 @@ const MyProfile = () => {
     }, []);
 
     useEffect(() => {
-        myProfile()
+        friendProfile(props.id)
             .then((result) => {
-                setBlogs(result.data.blog);
+                console.log(JSON.stringify(result));
+                setBlogs(result.data.blogData);
                 setUserProfile(result.data);
                 setLoadingBlogs(false);
-                profileData.email = result.data.email;
-                profileData.name = result.data.name;
+
             })
             .catch((err) => {
                 console.log(err);
             });
-    }, [renewal, modal]);
+    }, [renewal]);
 
     const handleCloseDetail = () => {
         setIsHidingDetail(true);
         setTimeout(() => {
             setIsHidingDetail(false);
             setSelectedBlog(null);
+            setLayout(!layout);
         }, 500);
     };
 
     const handleSelectBlog = (blog) => {
         setSelectedBlog(blog);
-        console.log("셀렉트 블로그 "+JSON.stringify(selectedBlog.id));
         setIsHidingDetail(false);
         setLayout(true);
-    };
-
-    const handleLayout = () => {
-        setLayout(false);
     };
 
     const handleRenewal = () => {
         setRenewal(true);
     };
-
-    const handleModal = () =>{
-        setModal(!modal);
-    }
 
     if (loadingProfile || loadingBlogs) {
         return <p>로딩 중...</p>;
@@ -92,8 +67,8 @@ const MyProfile = () => {
             <div className="profile-container">
                 {userProfile && (
                     <>
-                    <div className="profile-header">
-                        <div className="profile-avatar-container">
+                        <div className="profile-header">
+                            <div className="profile-avatar-container">
                                 <img
                                     src={userProfile.avatarUrl}
                                     alt="프로필 사진"
@@ -109,35 +84,31 @@ const MyProfile = () => {
 
                         {/* 버튼을 별도로 분리 */}
                         <div className="profile-buttons">
-                            <button onClick={() => {handleModal()}}>
-                                프로필 수정
-                            </button>
-                            <button>친구 목록</button>
+                            <button onClick={()=>{props.handleBackToList()}}>친구 추천 목록</button>
                         </div>
                     </>
-                    )}
-                    </div>
+                )}
+            </div>
 
-                {/*{selectedBlog && layout ? (*/}
+            {/*{selectedBlog && layout ? (*/}
             {layout ? (
                 <DetailPage
                     isHidingDetail={isHidingDetail}
                     onClose={handleCloseDetail}
-                    id={selectedBlog}
+                    value={selectedBlog}
                     handleRenewal={handleRenewal}
                     deleteBlog={deleteBlog}
-                    handleLayout={handleLayout}
                 />
             ) : (
                 <div className="blogs-container">
-                    {blogs.length === 0 ? (
+                    {blogs?.length === 0 ? (
                         <p className="empty-message">작성한 블로그가 없습니다.</p>
                     ) : (
-                        blogs.map((blog) => (
+                        blogs?.map((blog) => (
                             <div
                                 key={blog.id}
                                 className="blog-card"
-                                onClick={() => handleSelectBlog(blog)}
+                                onClick={() => handleSelectBlog(blog.id)}
                             >
                                 <h3>{blog.title}</h3>
                                 <p>{blog.createAt}</p>
@@ -146,20 +117,9 @@ const MyProfile = () => {
                     )}
                 </div>
             )}
-            {modal && (
-                <>
-                    {/* 모달 배경 클릭 시 모달을 닫을 수 있도록 */}
-                    <div className="modal-background" onClick={handleModal}></div>
-
-                    {/* 모달 내용 */}
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                        <MyProfileUpdateModal handleModal={handleModal} profile={profileData}/>
-                    </div>
-                </>
-            )}
 
         </div>
-    );
-};
+    )
+}
 
-export default MyProfile;
+export default FriendProfile;

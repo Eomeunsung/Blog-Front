@@ -54,6 +54,7 @@ export const deleteBlog = async (id) => {
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         })
+        console.log("삭제 성공 "+JSON.stringify(res))
         return res.data;
     }catch (error) {
         throw error;

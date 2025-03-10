@@ -1,0 +1,89 @@
+.friends-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.friends-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center; /* 아이콘과 입력창을 세로로 가운데 정렬 */
+    margin-bottom: 15px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-right: 10px; /* 입력창과 아이콘 간의 간격 */
+    border: 2px solid #6c63ff;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    border-color: #ff6584;
+    box-shadow: 0 4px 10px rgba(255, 101, 132, 0.2);
+}
+
+.search-icon {
+    font-size: 24px;
+    color: #6c63ff;
+    cursor: pointer;
+}
+
+.friends-list {
+    list-style: none;
+    padding: 0;
+}
+
+.friend-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: background 0.3s;
+}
+
+.friend-card:hover {
+    background: #f0f0ff;
+}
+
+.friend-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.no-friends {
+    color: gray;
+}
+
+.recommendation-button {
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.recommendation-button:hover {
+    background-color: #ff6584;
+}

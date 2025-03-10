@@ -43,6 +43,7 @@ function ListPage(props) {
         getBlog()
             .then((result) => {
                 if (result) {
+                    console.log("result "+JSON.stringify(result));
                     setBlog(result);
                     setRenewal(false);
 
@@ -104,10 +105,14 @@ function ListPage(props) {
                             >
                                 <h6>{value.title}</h6>
                                 <p>{value.localDate}</p>
+                                <p>{value.userName}</p>
                             </div>
                         ))
                     ) : (
-                        <div>데이터가 없음</div>
+                        <div className="empty-message">
+                            📌 게시물이 없습니다! <br/>
+                            ✏️ 새로운 글을 작성해 보세요.
+                        </div>
                     )}
                 </div>
             )}

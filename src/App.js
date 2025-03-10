@@ -3,20 +3,22 @@ import './App.css';
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import "./css/Nav.css";
 import {Routes, Route, useNavigate} from "react-router-dom";
-import ListPage from "./layouts/list/ListPage";
-import DetailPage from "./layouts/detail/DetailPage";
-import WritePage, {mySchema} from './layouts/write/WritePage'
-import ModifyPage from "./layouts/modify/ModifyPage";
-import ChatRoom from "./layouts/ChatRoom";
+import ListPage from "./components/list/ListPage";
+import DetailPage from "./components/detail/DetailPage";
+import WritePage, {mySchema} from './components/write/WritePage'
+import ModifyPage from "./components/modify/ModifyPage";
+import ChatRoom from "./components/ChatRoom";
 import { GiTalk } from "react-icons/gi";
 import { IoMdHome } from "react-icons/io";
 import { TfiWrite } from "react-icons/tfi";
-import ChatRoomList from "./layouts/ChatRoomList";
-import SignInPage from "./layouts/users/SignInPage"
-import SignUpPage from "./layouts/users/SignUpPage"
+import ChatRoomList from "./components/ChatRoomList";
+import SignInPage from "./components/users/SignInPage"
+import SignUpPage from "./components/users/SignUpPage"
 import {useEffect, useState} from "react";
-import MyProfile from "./layouts/users/MyProfile";
-import MyProfileUpdateModal from "./layouts/users/MyProfileUpdateModal";
+import MyProfile from "./components/users/MyProfile";
+import MyProfileUpdateModal from "./components/users/MyProfileUpdateModal";
+import FriendPage from "./components/friend/FriendPage";
+import { FaUserFriends } from "react-icons/fa";
 
 function App() {
   let navigate = useNavigate();
@@ -71,6 +73,16 @@ function App() {
         }
     }
 
+    const handleFriend =()=>{
+        const token = localStorage.getItem("jwt");
+        if(token){
+            navigate("/friend");
+        }else{
+            alert("로그인 후 가능합니다.")
+            navigate("/login");
+        }
+    }
+
   return (
     <div className="App">
         <Navbar expand="lg" className="custom-navbar">
@@ -89,6 +101,9 @@ function App() {
               </Nav.Link>
                 <Nav.Link onClick={()=>{navigate("/chatRoom")}} className="custom-nav-link">
                     <GiTalk />
+                </Nav.Link>
+                <Nav.Link onClick={()=>{handleFriend()}} className="custom-nav-link">
+                    <FaUserFriends />
                 </Nav.Link>
             </Nav>
               <Nav>
@@ -146,6 +161,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage></SignUpPage>}/>
           <Route path="/myprofile" element={<MyProfile></MyProfile>}/>
           <Route path="/myprofile/update" element={<MyProfileUpdateModal></MyProfileUpdateModal>}/>
+          <Route path="/friend" element={<FriendPage></FriendPage>}/>
       </Routes>
     </div>
   );

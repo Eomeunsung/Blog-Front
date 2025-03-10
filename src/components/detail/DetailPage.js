@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../css/Detail.css';
-import DeleteModal from "./DeleteModal";
+import DeleteModal from "../delete/DeleteModal";
 import 'react-quill/dist/quill.snow.css';  // Quill 기본 스타일
 import ModifyPage from "../modify/ModifyPage";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ function DetailPage(props) {
     const navigate = useNavigate();
     const [deleteIs, setDeleteIs] = useState(false);
     const [blogData, setBlogData] = useState({
+        blogId:0,
         title: "",
         content: "",
         createAt:"",
@@ -21,8 +22,13 @@ function DetailPage(props) {
     });
     const [comment, setComment] = useState('');
     const [commentFlag, setCommentFlag] = useState(false);
+    const [deleteId, setDeleteId] = useState();
 
-
+    const handleDelete = (id) =>{
+        console.log("삭제할 블로그 아이디 "+id)
+        setDeleteId(id);
+        setDeleteIs(!deleteIs);
+    }
 
     const handleCloseModal = () => {
         setDeleteIs(false);
@@ -34,6 +40,7 @@ function DetailPage(props) {
             // console.log("블로그 아이디 "+props.value)
             getDetailBlog(props.value)
                 .then((res) => {
+                    console.log("디테일 받은 데이터 "+JSON.stringify(res));
                     setBlogData(res)
                     // console.log("성공 "+JSON.stringify(res))
                 })
@@ -90,7 +97,7 @@ function DetailPage(props) {
                 </button>
                 {props.deleteBlog ? (
                     <>
-                        <button className="close-button" onClick={() => setDeleteIs(true)}>
+                        <button className="close-button" onClick={() => handleDelete(blogData.blogId)}>
                             <MdDelete />
                         </button>
                         <button className="close-button" onClick={handleModifyClick}>
@@ -138,10 +145,10 @@ function DetailPage(props) {
 
             {deleteIs && (
                 <DeleteModal
-                    blogId={blogData.id}
+                    blogId={deleteId}
                     deleteIs={handleCloseModal}
                     handleRenewal={props.handleRenewal}
-                    handleLayout={props.handleLayout}
+                    onClose={props.onClose}
                 />
             )}
         </div>
