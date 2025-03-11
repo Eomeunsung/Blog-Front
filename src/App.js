@@ -5,7 +5,7 @@ import "./css/Nav.css";
 import {Routes, Route, useNavigate} from "react-router-dom";
 import ListPage from "./components/list/ListPage";
 import DetailPage from "./components/detail/DetailPage";
-import WritePage, {mySchema} from './components/write/WritePage'
+import WritePage from './components/write/WritePage'
 import ModifyPage from "./components/modify/ModifyPage";
 import ChatRoom from "./components/ChatRoom";
 import { GiTalk } from "react-icons/gi";
@@ -19,6 +19,7 @@ import MyProfile from "./components/users/MyProfile";
 import MyProfileUpdateModal from "./components/users/MyProfileUpdateModal";
 import FriendPage from "./components/friend/FriendPage";
 import { FaUserFriends } from "react-icons/fa";
+import RecommendFriendPage from "./components/friend/RecommendFriendPage";
 
 function App() {
   let navigate = useNavigate();
@@ -162,6 +163,7 @@ function App() {
           <Route path="/myprofile" element={<MyProfile></MyProfile>}/>
           <Route path="/myprofile/update" element={<MyProfileUpdateModal></MyProfileUpdateModal>}/>
           <Route path="/friend" element={<FriendPage></FriendPage>}/>
+          <Route path="/recommendation" element={<RecommendFriendPage></RecommendFriendPage>}/>
       </Routes>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./../../css/RecommendFriendPage.css";
 import { CiSearch } from "react-icons/ci";
 import { recommendSearch, friendAdd } from "../../api/FriendApi";
-import FriendProfile from "./FriendProfile";
+import RecommendFriendProfilePage from "./RecommendFriendProfilePage";
 
 const init = {
     id: 0,
@@ -98,7 +98,7 @@ function RecommendFriendPage(props) {
                 </div>
             ) : (
                 // 친구 프로필 화면
-                <FriendProfile id={friendId} handleBackToList={handleBackToList}/>
+                <RecommendFriendProfilePage id={friendId} handleBackToList={handleBackToList}/>
             )}
         </div>
     );

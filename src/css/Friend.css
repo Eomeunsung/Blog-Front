@@ -75,8 +75,8 @@
 
 .recommendation-button {
     padding: 10px 20px;
-    background-color: #6c63ff;
     color: white;
+    background: linear-gradient(135deg, #a777e3, #7c4dff); /* 보라색 계열의 그라디언트 */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -85,5 +85,28 @@
 }
 
 .recommendation-button:hover {
-    background-color: #ff6584;
+    background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
+    transform: scale(1.02); /* 호버 시 약간 확대 */
 }
+
+/* 부모 요소에 Flexbox 적용 */
+.reqButtons-container {
+    display: flex;
+    gap: 10px; /* 버튼 간격 설정 */
+}
+
+.friendReq-button {
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(135deg, #a777e3, #7c4dff); /* 보라색 계열의 그라디언트 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.friendReq-button:hover {
+    background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
+    transform: scale(1.02); /* 호버 시 약간 확대 */
+}
+

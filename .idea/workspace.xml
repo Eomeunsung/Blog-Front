@@ -5,34 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/FriendApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/friend/FriendPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/friend/FriendProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/friend/SearchPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/write/WritePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/Friend.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/RecommendFriendPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/friend/FriendProfilePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/BlogApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/BlogApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/UserApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/List.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/List.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Write.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Write.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/ChatRoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatRoom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChatRoomList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/detail/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/delete/DeleteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/detail/DetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/DetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/list/ListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list/ListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/modify/ModifyModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modify/ModifyModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/modify/ModifyPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modify/ModifyPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/users/MyProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/users/MyProfileUpdateModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfileUpdateModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/users/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/SignInPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/users/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/SignUpPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/write/WriteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/write/WriteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/write/WritePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/FriendApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/FriendApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/FriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/FriendPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/FriendProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/SearchPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Friend.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Friend.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +152,8 @@
       <workItem from="1740730265891" duration="11648000" />
       <workItem from="1740899876040" duration="8526000" />
       <workItem from="1741052835617" duration="31164000" />
-      <workItem from="1741241117716" duration="41614000" />
+      <workItem from="1741241117716" duration="41959000" />
+      <workItem from="1741593458737" duration="10540000" />
     </task>
     <servers />
   </component>

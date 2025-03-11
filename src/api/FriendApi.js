@@ -15,6 +15,37 @@ export const friendGet  = async (data) => {
     }
 }
 
+export const friendRequest = async (id) => {
+    try{
+        const res = await axios.get(`${process.env.REACT_APP_URL}/friendRequest`, {
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        });
+        console.log("친구 요청 조회 "+JSON.stringify(res.data));
+        return res.data;
+    }catch (error) {
+        throw error;
+    }
+}
+
+export const friendAccept = async (id) => {
+    try{
+        const res = await axios.post(`${process.env.REACT_APP_URL}/friendAccept/${id}`, {},{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        });
+        console.log("친구 수락 확인 데이터 "+JSON.stringify(res));
+        return res.data;
+    }catch (error) {
+        console.log("친구 수락 환인 에러 "+JSON.stringify(error));
+        throw error;
+    }
+}
+
 export const searchFriends  = async (data) => {
     try{
         const res = await axios.get(`${process.env.REACT_APP_URL}/searchFriend"`, {
@@ -23,6 +54,7 @@ export const searchFriends  = async (data) => {
         console.log("친구 목록 조회 "+JSON.stringify(res.data));
         return res.data;
     }catch (error) {
+        console.log(error);
         throw error;
     }
 }

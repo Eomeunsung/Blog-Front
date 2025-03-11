@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigate} from "react-router-dom";
 import {friendProfile} from "./../../api/FriendApi"
 import DetailPage from "../detail/DetailPage";
 import "./../../css/MyProfile.css"
 
-function FriendProfile(props) {
+function RecommendFriendProfilePage(props) {
     const [userProfile, setUserProfile] = useState(null);
     const [blogs, setBlogs] = useState([]);
     const [loadingProfile, setLoadingProfile] = useState(true);
@@ -27,7 +26,6 @@ function FriendProfile(props) {
     useEffect(() => {
         friendProfile(props.id)
             .then((result) => {
-                console.log(JSON.stringify(result));
                 setBlogs(result.data.blogData);
                 setUserProfile(result.data);
                 setLoadingBlogs(false);
@@ -122,4 +120,4 @@ function FriendProfile(props) {
     )
 }
 
-export default FriendProfile;
+export default RecommendFriendProfilePage;
