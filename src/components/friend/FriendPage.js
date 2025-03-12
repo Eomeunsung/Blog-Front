@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./../../css/Friend.css";
-import { friendGet, friendRequest, friendAccept } from "../../api/FriendApi";
+import { friendGet, friendRequest, friendAccept, friendDelete } from "../../api/FriendApi";
 import { CiSearch } from "react-icons/ci";
 import FriendProfilePage from "./FriendProfilePage";
 import {useNavigate} from "react-router-dom";
@@ -31,13 +31,36 @@ function FriendPage() {
         console.log("들어온 id "+id);
         friendAccept(id)
             .then((res) => {
-                // 수락 처리 후 작업
+                friendRequest()
+                    .then((res) => {
+                        setFriendReq(res.data);
+                    })
+                    .catch((err) => {
+                        console.error("친구 요청 가져오기 실패", err);
+                    });
+                // 수락 후 친구 목록을 다시 가져오기
+                friendGet()
+                    .then((res) => {
+                        setFriends(res.data); // 최신 친구 목록으로 갱신
+                    })
+                    .catch((err) => {
+                        console.error("친구 목록을 가져오는 데 실패했습니다.", err);
+                    });
             })
             .catch((err) => {
-                // 에러 처리
+                console.error("친구 요청 수락 실패", err);
             });
     };
 
+    const handleDelete = (id) => {
+        friendDelete(id)
+            .then((res) => {
+                setFriends(friends.filter(friend => friend.id !== id));
+        })
+            .catch((err) => {
+
+            })
+    }
     useEffect(() => {
         friendRequest()
             .then((res) => {
@@ -119,6 +142,20 @@ function FriendPage() {
                                     <li key={friend.id} className="friend-card"
                                         onClick={() => handleFriendProfile(friend.id)}>
                                         {friend.name}
+                                        <button className="friend-delete"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    navigate("/chat",{state : friend.id});
+                                                }}>
+                                            채팅
+                                        </button>
+                                        <button className="friend-delete"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    handleDelete(friend.id)
+                                                }}>
+                                            삭제
+                                        </button>
                                     </li>
                                 ))}
                             </ul>

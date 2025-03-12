@@ -7,11 +7,11 @@ import ListPage from "./components/list/ListPage";
 import DetailPage from "./components/detail/DetailPage";
 import WritePage from './components/write/WritePage'
 import ModifyPage from "./components/modify/ModifyPage";
-import ChatRoom from "./components/ChatRoom";
+import ChatRoom from "./components/chat/ChatRoom";
 import { GiTalk } from "react-icons/gi";
 import { IoMdHome } from "react-icons/io";
 import { TfiWrite } from "react-icons/tfi";
-import ChatRoomList from "./components/ChatRoomList";
+import ChatRoomList from "./components/chat/ChatRoomList";
 import SignInPage from "./components/users/SignInPage"
 import SignUpPage from "./components/users/SignUpPage"
 import {useEffect, useState} from "react";
@@ -156,8 +156,8 @@ function App() {
           <Route path="/write" element={<WritePage></WritePage>}/>
           <Route path="/detail" element={<DetailPage></DetailPage>}/>
           <Route path="/modify" element={<ModifyPage></ModifyPage>}/>
-          <Route path="/chatRoom" element={<ChatRoom></ChatRoom>}/>
-          <Route path="/room" element={<ChatRoomList></ChatRoomList>}/>
+          <Route path="/chatRoom" element={<ChatRoomList></ChatRoomList>}/>
+          <Route path="/chat" element={<ChatRoom></ChatRoom>}/>
           <Route path="/login" element={<SignInPage></SignInPage>}/>
           <Route path="/signup" element={<SignUpPage></SignUpPage>}/>
           <Route path="/myprofile" element={<MyProfile></MyProfile>}/>

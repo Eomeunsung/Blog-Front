@@ -1,0 +1,52 @@
+/* ChatRoomList.css */
+
+/* 전체 컨테이너 스타일 */
+.chat-room-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 채팅방 목록 스타일 */
+.chat-room-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* 각 채팅방 항목 스타일 */
+.chat-room-item {
+    margin: 15px 0;
+    cursor: pointer; /* 클릭 가능하도록 커서 변경 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-room-item:hover {
+    background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
+}
+
+/* 채팅방 카드 스타일 */
+.chat-room-card {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* 채팅방 제목 스타일 */
+.chat-room-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 채팅방 설명 스타일 */
+.chat-room-description {
+    color: #555;
+}
+

@@ -106,3 +106,19 @@ export const friendProfile  = async (id) => {
         throw error;
     }
 }
+
+export const friendDelete  = async (id) => {
+    try{
+        const res = await axios.post(`${process.env.REACT_APP_URL}/friendDelete/${id}`,{},{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        });
+        console.log("삭제 완료 "+res.data)
+        return res.data;
+    }catch (error) {
+        console.log(error);
+        throw error;
+    }
+}

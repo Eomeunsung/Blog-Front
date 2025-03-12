@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/friend/FriendProfilePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/ChatApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/ChatRoomList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/FriendApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/FriendApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatRoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dropdown.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/friend/FriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/FriendPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/friend/FriendProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendProfilePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/friend/SearchPage.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/Friend.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Friend.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/RecommendFriendPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/RecommendFriendPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +91,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/chat" />
       <recent name="$PROJECT_DIR$/src/layouts/delete" />
       <recent name="$PROJECT_DIR$/src/config" />
       <recent name="$PROJECT_DIR$/src/config/quill" />
       <recent name="$PROJECT_DIR$/src/routes/write" />
-      <recent name="$PROJECT_DIR$/src/routes/modify" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,7 +158,9 @@
       <workItem from="1740899876040" duration="8526000" />
       <workItem from="1741052835617" duration="31164000" />
       <workItem from="1741241117716" duration="41959000" />
-      <workItem from="1741593458737" duration="10540000" />
+      <workItem from="1741593458737" duration="11323000" />
+      <workItem from="1741670490233" duration="3680000" />
+      <workItem from="1741748001092" duration="5878000" />
     </task>
     <servers />
   </component>

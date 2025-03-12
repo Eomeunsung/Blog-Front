@@ -8,6 +8,8 @@ const init = {
     id: 0,
     email: "",
     name: "",
+    added: false,  // 친구 추가 여부
+    status: "" // 친구 상태 (예: 'PENDING', 'ACCEPTED', '')
 };
 
 function RecommendFriendPage(props) {
@@ -25,12 +27,14 @@ function RecommendFriendPage(props) {
         alert(`${friendId}번 친구가 추가되었습니다!`);
         friendAdd(friendId)
             .then((res) => {
-
+                // 친구가 추가되면 상태를 'PENDING'으로 설정
+                setFriends(friends.map(friend =>
+                    friend.id === friendId ? { status: "PENDING" } : friend
+                ));
             })
             .catch((err) => {
-
-            })
-
+                console.error("친구 추가 실패", err);
+            });
     };
 
     const handleFriendProfile = (friendId) => {
@@ -46,7 +50,8 @@ function RecommendFriendPage(props) {
         recommendSearch()
             .then((res) => {
                 console.log("추천 친구 가져온 데이터", res.data);
-                setFriends(res.data); // 친구 목록 업데이트
+                // 상태에 초기화된 친구 목록 설정
+                setFriends(res.data);
             })
             .catch((err) => {
                 console.error("친구 목록 가져오기 실패", err);
@@ -81,15 +86,20 @@ function RecommendFriendPage(props) {
                                     onClick={() => handleFriendProfile(friend.id)}>
                                     <div className="friend-info">
                                         <p>{friend.name}</p>
-                                        <button
-                                            className="add-button"
-                                            onClick={(e) => {
-                                                e.stopPropagation(); // 부모 요소 클릭 방지
-                                                handleAddFriend(friend.id);
-                                            }}
-                                        >
-                                            친구 추가
-                                        </button>
+                                        {/* 이미 추가된 친구는 버튼 숨기기 */}
+                                        {friend.status !== "PENDING" ? (
+                                            <button
+                                                className="add-button"
+                                                onClick={(e) => {
+                                                    e.stopPropagation(); // 부모 요소 클릭 방지
+                                                    handleAddFriend(friend.id);
+                                                }}
+                                            >
+                                                친구 추가
+                                            </button>
+                                        ) : (
+                                            <div className="add-text">이미 요청 보낸 친구</div> // 'PENDING' 상태일 때 메시지 표시
+                                        )}
                                     </div>
                                 </li>
                             ))}
