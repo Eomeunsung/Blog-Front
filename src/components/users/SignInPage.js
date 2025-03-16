@@ -25,6 +25,7 @@ const SignInPage = () => {
                     }else if(response.code==="200"){
                         localStorage.setItem("jwt",response.data.jwt)
                         localStorage.setItem("name",response.data.name)
+                        localStorage.setItem("email",response.data.email)
                         window.location.href="/";
                     }
                 })

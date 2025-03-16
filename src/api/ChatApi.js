@@ -15,3 +15,38 @@ export const chatRoomList = async () => {
         throw error.response.status;
     }
 }
+
+export const chatRoomCreate = async (id) => {
+
+    try{
+        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/create/private/${id}`,{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        })
+        console.log(res.data);
+        return res.data;
+    }catch (error) {
+        console.log(error)
+        throw error.response.status;
+    }
+}
+
+export const chatPrivateGet = async (data) => {
+    console.log("챗 들어온 데이터")
+    const accountId = data;
+    try{
+        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/get/${accountId}`,{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        })
+        console.log(res.data);
+        return res.data;
+    }catch (error) {
+        console.log(error)
+        throw error.response.status;
+    }
+}
