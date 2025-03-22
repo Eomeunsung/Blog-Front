@@ -109,12 +109,25 @@
     background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
     transform: scale(1.02); /* 호버 시 약간 확대 */
 }
+/*.friend-card {*/
+/*    display: flex;*/
+/*    justify-content: space-between; !* 버튼을 양쪽 끝으로 배치 *!*/
+/*    align-items: center; !* 버튼을 세로로 중앙 정렬 *!*/
+/*    padding: 10px;*/
+/*    margin-bottom: 10px; !* 친구 카드 간 간격 *!*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 8px;*/
+/*    background-color: #fff;*/
+/*}*/
 
 .friend-delete {
     color: white;
     background: linear-gradient(135deg, #a777e3, #7c4dff); /* 보라색 계열의 그라디언트 */
     border: none;
     border-radius: 5px;
+    padding: 8px 16px; /* 버튼 안의 여백 */
+    margin-left: 10px; /* 버튼 간의 간격 */
+    cursor: pointer;
 }
 
 .friend-delete:hover {
@@ -122,3 +135,7 @@
     transform: scale(1.02); /* 호버 시 약간 확대 */
 }
 
+/* 버튼 간의 간격이 필요할 경우, margin을 추가할 수 있음 */
+.friend-card button {
+    margin-left: 10px; /* 버튼 간 간격 */
+}

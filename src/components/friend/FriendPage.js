@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./../../css/Friend.css";
+import "../../css/friend/Friend.css";
 import { friendGet, friendRequest, friendAccept, friendDelete } from "../../api/FriendApi";
 import { CiSearch } from "react-icons/ci";
 import FriendProfilePage from "./FriendProfilePage";
@@ -60,6 +60,13 @@ function FriendPage() {
             .catch((err) => {
 
             })
+    }
+    const handleChatRoom = (id) =>{
+        const data = {
+            id: id,
+            chatRoomFlag: false,
+        }
+        navigate("/chat", { state: data })
     }
     useEffect(() => {
         friendRequest()
@@ -142,20 +149,22 @@ function FriendPage() {
                                     <li key={friend.id} className="friend-card"
                                         onClick={() => handleFriendProfile(friend.id)}>
                                         {friend.name}
-                                        <button className="friend-delete"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    navigate("/chat",{state : friend.id});
-                                                }}>
-                                            채팅
-                                        </button>
-                                        <button className="friend-delete"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    handleDelete(friend.id)
-                                                }}>
-                                            삭제
-                                        </button>
+                                        <div className="friend-actions">
+                                            <button className="friend-delete"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        handleChatRoom(friend.id);
+                                                    }}>
+                                                채팅
+                                            </button>
+                                            <button className="friend-delete"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        handleDelete(friend.id);
+                                                    }}>
+                                                삭제
+                                            </button>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>

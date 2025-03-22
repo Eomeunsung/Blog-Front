@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../../css/MyProfileUpdateModal.css";
+import "../../css/profile/MyProfileUpdateModal.css";
 import {myProfileUpdate} from "../../api/UserApi"
 
 const MyProfileUpdateModal = ({ profile, handleModal}) => {

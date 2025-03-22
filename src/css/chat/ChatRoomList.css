@@ -1,0 +1,167 @@
+/* 전체 컨테이너 스타일 */
+.chat-room-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+/* 단체방 만들기 버튼을 오른쪽에 배치 */
+.create-group-chat-button {
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block; /* 기본적으로 인라인 블록 요소로 설정 */
+    margin-bottom: 20px; /* 버튼과 목록 사이에 간격 추가 */
+    align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.create-group-chat-button:hover {
+    background-color: #9b67d4;
+}
+
+/* 제목 스타일 */
+h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* 채팅방 목록 스타일 */
+.chat-room-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%; /* 채팅방 목록의 너비 100% */
+}
+
+/* 각 채팅방 항목 스타일 */
+.chat-room-item {
+    margin: 15px 0;
+    cursor: pointer; /* 클릭 가능하도록 커서 변경 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-room-item:hover {
+    background-color: #9b67d4; /* 더 밝은 보라색으로 전환 */
+    transform: scale(1.05); /* 호버 시 약간 확대 */
+}
+
+/* 채팅방 카드 스타일 */
+.chat-room-card {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* 채팅방 제목 스타일 */
+.chat-room-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 채팅방 설명 스타일 */
+.chat-room-description {
+    color: #555;
+}
+
+/*!* 친구 리스트 모달 *!*/
+.friend-list-modal {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80%; /* 화면 크기 축소 시 모달 크기 제한 */
+    bottom: 10px; /* 창 축소시 nav와 겹치지 않도록 하단에 약간의 여백 추가 */
+}
+
+/* 친구 목록 스타일 */
+.friend-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* 친구 항목 스타일 */
+.friend-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.friend-item:hover {
+    background-color: #ddd;
+}
+
+/* 체크박스 스타일 */
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* 방 생성 버튼 */
+.create-room-button {
+    background-color: #7c4dff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px; /* 버튼 간 간격 추가 */
+}
+
+.create-room-button:hover {
+    background-color: #9b67d4;
+}
+
+/* 방 제목 입력 창 스타일 */
+input[type="text"] {
+    width: 100%;  /* 입력 창이 부모 요소의 너비를 가득 채우도록 설정 */
+    padding: 10px;
+    margin-bottom: 15px; /* 버튼과 입력창 사이 간격 */
+    font-size: 16px;
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    border-radius: 5px;
+    box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 포커스 시 스타일 */
+input[type="text"]:focus {
+    outline: none; /* 기본 포커스 효과 없애기 */
+    border-color: #7c4dff; /* 파란색 테두리 */
+    box-shadow: 0 0 5px rgba(124, 77, 255, 0.4); /* 약간의 그림자 추가 */
+}
+
+/* 입력창에 텍스트가 있을 때 스타일 */
+input[type="text"]:not(:placeholder-shown) {
+    border-color: #7c4dff; /* 텍스트가 있으면 파란색 테두리 */
+}

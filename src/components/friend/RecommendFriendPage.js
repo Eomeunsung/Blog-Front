@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./../../css/RecommendFriendPage.css";
+import "../../css/friend/RecommendFriendPage.css";
 import { CiSearch } from "react-icons/ci";
 import { recommendSearch, friendAdd } from "../../api/FriendApi";
 import RecommendFriendProfilePage from "./RecommendFriendProfilePage";

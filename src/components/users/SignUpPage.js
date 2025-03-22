@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./../../css/SignUp.css";
+import "../../css/user/SignUp.css";
 import {createAccount} from "../../api/UserApi";
 // 초기값 설정
 const initSignUp = {

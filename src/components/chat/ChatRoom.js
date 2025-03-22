@@ -2,8 +2,8 @@ import React, {useState, useEffect, useRef} from 'react';
 import { Client } from '@stomp/stompjs'; // STOMP 클라이언트
 import SockJS from 'sockjs-client'; // SockJS 클라이언트
 import {useLocation} from "react-router-dom";
-import {chatPrivateGet, chatRoomCreate} from  "./../../api/ChatApi"
-import "./../../css/ChatRoom.css"
+import {chatPrivateGet, chatRoomCreate, chatMsgGet} from  "./../../api/ChatApi"
+import "../../css/chat/ChatRoom.css"
 
 
 const SOCKET_URL = "http://localhost:8080/ws";
@@ -26,12 +26,34 @@ function ChatRoom(props) {
     const [roomId, setRoomId] = useState(0);
 
     useEffect(()=>{
-        chatPrivateGet(data)
-            .then((data)=>{
-                // console.log("방 가져오기 "+JSON.stringify(data.data))
-                if(data.code==="001"){
-                    handleCreateChat()
-                }else{
+        if(!data.chatRoomFlag){
+            chatPrivateGet(data.id)
+                .then((data)=>{
+                    // console.log("방 가져오기 "+JSON.stringify(data.data))
+                    if(data.code==="001"){
+                        handleCreateChat()
+                    }else{
+                        setRoomId(data.data.roomId);
+
+                        const messagesData = data.data?.chatMessageGetDtoList || []; // 기본값은 빈 배열
+
+                        // 데이터에서 필요한 부분만 추출하여 messages에 저장
+                        const extractedMessages = messagesData.map(item => ({
+                            name: item.name,
+                            content: item.content,
+                            createAt: item.createAt,
+                        }));
+
+                        // messages 상태 갱신
+                        setMessages(extractedMessages);
+                    }
+                })
+                .catch((err)=>{
+                    console.log("에러 결과 "+err)
+                })
+        }else if(data.chatRoomFlag){
+            chatMsgGet(data.id)
+                .then((data)=>{
                     setRoomId(data.data.roomId);
 
                     const messagesData = data.data?.chatMessageGetDtoList || []; // 기본값은 빈 배열
@@ -45,11 +67,11 @@ function ChatRoom(props) {
 
                     // messages 상태 갱신
                     setMessages(extractedMessages);
-                }
-            })
-            .catch((err)=>{
+                }).catch((err)=>{
                 console.log("에러 결과 "+err)
             })
+        }
+
     },[data])
 
     const handleCreateChat = () =>{
@@ -154,22 +176,22 @@ function ChatRoom(props) {
             <div className="chat-wrapper">
                 <div className="chat-messages">
                     <div className="flex flex-col gap-1">
-                        {messages.map((message, index) => (
-                            message.type === "SYSTEM" ? (
+                        {messages.map((message, index) => {
+                            const isMyMessage = message.name === name; // 내 메시지인지 확인
+                            return message.type === "SYSTEM" ? (
                                 <div className="message-item system-message" key={index}>
                                     {message.content}
                                 </div>
                             ) : (
-                                <div className="message-item" key={index}>
+                                <div className={`message-item ${isMyMessage ? "my-message" : "other-message"}`} key={index}>
                                     <div className="message-header">
                                         <span className="message-name">{message.name}</span>
                                         <span className="message-time">{message.createAt}</span>
                                     </div>
                                     <div className="message-content">{message.content}</div>
                                 </div>
-                            )
-                        ))}
-
+                            );
+                        })}
                     </div>
                 </div>
                 <div className="input-wrapper">

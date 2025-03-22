@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {friendProfile} from "./../../api/FriendApi"
 import DetailPage from "../detail/DetailPage";
-import "./../../css/MyProfile.css"
+import "../../css/profile/MyProfile.css"
 
 function RecommendFriendProfilePage(props) {
     const [userProfile, setUserProfile] = useState(null);

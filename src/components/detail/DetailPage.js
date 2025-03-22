@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../css/Detail.css';
+import '../../css/detail/Detail.css';
 import DeleteModal from "../delete/DeleteModal";
 import 'react-quill/dist/quill.snow.css';  // Quill 기본 스타일
 import ModifyPage from "../modify/ModifyPage";

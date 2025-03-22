@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./../../css/MyProfile.css";
+import "../../css/profile/MyProfile.css";
 import { myProfile } from "../../api/UserApi";
 import DetailPage from "../detail/DetailPage";
 import MyProfileUpdateModal from "./MyProfileUpdateModal";

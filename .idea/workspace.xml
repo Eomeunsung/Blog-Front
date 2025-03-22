@@ -5,17 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/chat/ChatMessageItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/chat/SystemMessageItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/ChatRoom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setProxy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/chat/ChatRoom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ChatApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/chat/ChatRoom.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/DetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/DetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/FriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/FriendPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/friend/RecommendFriendProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/RecommendFriendProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/MyProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/MyProfileUpdateModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfileUpdateModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/SignInPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/SignUpPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ChatRoom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/ChatRoomList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/chat/ChatRoomList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/detail/Detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Friend.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/friend/Friend.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/user/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/MyProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/profile/MyProfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/MyProfileUpdateModal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/profile/MyProfileUpdateModal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/RecommendFriendPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/friend/RecommendFriendPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/user/SignUp.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +99,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/chat" />
-      <recent name="$PROJECT_DIR$/src/layouts/delete" />
-      <recent name="$PROJECT_DIR$/src/config" />
-      <recent name="$PROJECT_DIR$/src/config/quill" />
-      <recent name="$PROJECT_DIR$/src/routes/write" />
+      <recent name="$PROJECT_DIR$/src/css/user" />
+      <recent name="$PROJECT_DIR$/src/css/friend" />
+      <recent name="$PROJECT_DIR$/src/css/profile" />
+      <recent name="$PROJECT_DIR$/src/css/detail" />
+      <recent name="$PROJECT_DIR$/src/css/Chat" />
     </key>
   </component>
   <component name="RunManager">
@@ -161,7 +172,10 @@
       <workItem from="1741762170572" duration="64000" />
       <workItem from="1741833654567" duration="7222000" />
       <workItem from="1741843039950" duration="26000" />
-      <workItem from="1742011005144" duration="24355000" />
+      <workItem from="1742011005144" duration="24512000" />
+      <workItem from="1742130499459" duration="5335000" />
+      <workItem from="1742270250336" duration="2473000" />
+      <workItem from="1742523461492" duration="16566000" />
     </task>
     <servers />
   </component>
