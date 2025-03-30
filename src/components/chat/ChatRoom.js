@@ -1,132 +1,112 @@
-import React, {useState, useEffect, useRef} from 'react';
-import { Client } from '@stomp/stompjs'; // STOMP 클라이언트
-import SockJS from 'sockjs-client'; // SockJS 클라이언트
-import {useLocation} from "react-router-dom";
-import {chatPrivateGet, chatRoomCreate, chatMsgGet} from  "./../../api/ChatApi"
-import "../../css/chat/ChatRoom.css"
-
+import React, { useState, useEffect, useRef } from "react";
+import { Client } from "@stomp/stompjs"; // STOMP 클라이언트
+import SockJS from "sockjs-client"; // SockJS 클라이언트
+import { useLocation } from "react-router-dom";
+import { chatPrivateGet, chatRoomCreate, chatMsgGet } from "./../../api/ChatApi";
+import "../../css/chat/ChatRoom.css";
 
 const SOCKET_URL = "http://localhost:8080/ws";
-const init = {
-    name : "",
-    content:"",
-    createAt:"",
-}
+const init = { name: "", content: "", createAt: "" };
+
 function ChatRoom(props) {
     const location = useLocation();
     const data = location.state;
-    const [name, setName] = React.useState(localStorage.getItem('name'));
-    const [email, setEmail] = React.useState(localStorage.getItem('email'));
+    const [name] = useState(localStorage.getItem("name"));
+    const [email] = useState(localStorage.getItem("email"));
     const [isSending, setIsSending] = useState(false); // 중복 전송 방지 상태
-
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([init]);
-    const stompClientRef = useRef(null);
-    const inputRef = useRef(null);
     const [roomId, setRoomId] = useState(0);
 
-    useEffect(()=>{
-        if(!data.chatRoomFlag){
+    const stompClientRef = useRef(null);
+    const inputRef = useRef(null);
+    const messagesEndRef = useRef(null);
+
+    // 🔥 채팅방 정보 가져오기
+    useEffect(() => {
+        if (!data.chatRoomFlag) {
             chatPrivateGet(data.id)
-                .then((data)=>{
-                    // console.log("방 가져오기 "+JSON.stringify(data.data))
-                    if(data.code==="001"){
-                        handleCreateChat()
-                    }else{
-                        setRoomId(data.data.roomId);
-
-                        const messagesData = data.data?.chatMessageGetDtoList || []; // 기본값은 빈 배열
-
-                        // 데이터에서 필요한 부분만 추출하여 messages에 저장
-                        const extractedMessages = messagesData.map(item => ({
+                .then((res) => {
+                    if (res.code === "001") {
+                        handleCreateChat();
+                    } else {
+                        setRoomId(res.data.roomId);
+                        setMessages(
+                            res.data.chatMessageGetDtoList.map((item) => ({
+                                name: item.name,
+                                content: item.content,
+                                createAt: item.createAt,
+                            }))
+                        );
+                    }
+                })
+                .catch((err) => console.error("에러 결과", err));
+        } else {
+            chatMsgGet(data.id)
+                .then((res) => {
+                    setRoomId(res.data.roomId);
+                    setMessages(
+                        res.data.chatMessageGetDtoList.map((item) => ({
                             name: item.name,
                             content: item.content,
                             createAt: item.createAt,
-                        }));
-
-                        // messages 상태 갱신
-                        setMessages(extractedMessages);
-                    }
+                        }))
+                    );
                 })
-                .catch((err)=>{
-                    console.log("에러 결과 "+err)
-                })
-        }else if(data.chatRoomFlag){
-            chatMsgGet(data.id)
-                .then((data)=>{
-                    setRoomId(data.data.roomId);
-
-                    const messagesData = data.data?.chatMessageGetDtoList || []; // 기본값은 빈 배열
-
-                    // 데이터에서 필요한 부분만 추출하여 messages에 저장
-                    const extractedMessages = messagesData.map(item => ({
-                        name: item.name,
-                        content: item.content,
-                        createAt: item.createAt,
-                    }));
-
-                    // messages 상태 갱신
-                    setMessages(extractedMessages);
-                }).catch((err)=>{
-                console.log("에러 결과 "+err)
-            })
+                .catch((err) => console.error("에러 결과", err));
         }
+    }, [data]);
 
-    },[data])
+    // 🔥 채팅방 생성
+    const handleCreateChat = () => {
+        chatRoomCreate(data.id)
+            .then((res) => setRoomId(res.data))
+            .catch((err) => console.error("채팅방 생성 오류", err));
+    };
 
-    const handleCreateChat = () =>{
-        console.log("채팅방 없음으로 새로 개설")
-        chatRoomCreate(data)
-            .then((data)=>{
-                console.log("룸 생성 아이디1 "+data.data)
-                setRoomId(data.data);
+    // ✅ 채팅방 입장 시 + 메시지 추가 시 스크롤 이동
+    useEffect(() => {
+        if (messages.length > 1) {
+            messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [messages]);
 
-            }).catch((err)=>{
-
-        })
-    }
-
-    useEffect(()=>{
+    // 🔥 WebSocket 연결
+    useEffect(() => {
         if (roomId !== 0) {
-            webSocket();
+            connectWebSocket();
         }
-    },[roomId])
+    }, [roomId]);
 
+    const connectWebSocket = () => {
+        if (stompClientRef.current) {
+            stompClientRef.current.deactivate();
+        }
 
-
-    const webSocket = () => {
-        const socket = new SockJS(SOCKET_URL, null, {
-            withCredentials: false,
-        });
+        const socket = new SockJS(SOCKET_URL);
         const stompClient = new Client({
             webSocketFactory: () => socket,
             debug: (msg) => console.log("[STOMP]:", msg),
             connectHeaders: {
-                Authorization: `Bearer ${localStorage.getItem('jwt')}`,
-                name: localStorage.getItem('name'),
+                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                name: localStorage.getItem("name"),
                 id: roomId,
-                email: localStorage.getItem('email'),
+                email: localStorage.getItem("email"),
             },
             onConnect: () => {
-                console.log("[STOMP] 연결 성공: ", stompClient);
-
-                // 기존 구독 취소
-                if (stompClientRef.current) {
-                    stompClientRef.current.deactivate();
-                }
+                console.log("[STOMP] 연결 성공");
 
                 stompClientRef.current = stompClient;
-                stompClientRef.current.subscribe(`/topic/chat/${roomId}`, (message) => {
+                stompClient.subscribe(`/topic/chat/${roomId}`, (message) => {
                     if (message.body) {
                         const newMessage = JSON.parse(message.body);
-                        setMessages((prevMessages) => [...prevMessages, newMessage]); // 이전 상태 기반으로 메시지 추가
-                        setMessage("");  // 입력창 초기화
-                        console.log("새로운 메시지 추가 후 메시지들: ", newMessage);
+                        setMessages((prevMessages) => [...prevMessages, newMessage]);
+                        setMessage("");
                     }
                 });
             },
             onStompError: (e) => {
-                console.error("[STOMP] 연결 실패: ", e);
+                console.error("[STOMP] 연결 실패:", e);
                 stompClient.deactivate();
             },
             onDisconnect: () => console.log("STOMP 연결 해제"),
@@ -138,17 +118,12 @@ function ChatRoom(props) {
         stompClient.activate();
     };
 
+    // 🔥 메시지 전송
+    const sendMessage = async () => {
+        if (!message.trim() || !stompClientRef.current?.connected || isSending) return;
 
-    const sendMessage = () => {
-        if (!message.trim() || !stompClientRef.current || !stompClientRef.current.connected || isSending) return;
-
-        const messageDto = {
-            name: name,
-            email: email,
-            content: message
-        };
-
-        setIsSending(true);  // 전송 시작
+        const messageDto = { name, email, content: message };
+        setIsSending(true);
 
         stompClientRef.current.publish({
             destination: `/app/chat/${roomId}`,
@@ -158,37 +133,35 @@ function ChatRoom(props) {
         setMessage(""); // 메시지 전송 후 초기화
         inputRef.current?.focus();
 
-        setIsSending(false);  // 전송 완료
+        setTimeout(() => setIsSending(false), 300); // 300ms 후 전송 상태 초기화
     };
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            // 한글 입력 중이면 메시지를 전송하지 않음
-            if (e.nativeEvent.isComposing) return;
 
-            e.preventDefault();  // 기본 동작 방지
-            sendMessage();  // 메시지 전송
+    // 🔥 Enter 키 이벤트 처리
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+            e.preventDefault();
+            sendMessage();
         }
     };
-
 
     return (
         <div className="chat-container">
             <div className="chat-wrapper">
                 <div className="chat-messages">
                     <div className="flex flex-col gap-1">
-                        {messages.map((message, index) => {
-                            const isMyMessage = message.name === name; // 내 메시지인지 확인
-                            return message.type === "SYSTEM" ? (
-                                <div className="message-item system-message" key={index}>
-                                    {message.content}
-                                </div>
-                            ) : (
-                                <div className={`message-item ${isMyMessage ? "my-message" : "other-message"}`} key={index}>
+                        {messages.map((msg, index) => {
+                            const isMyMessage = msg.name === name;
+                            return (
+                                <div
+                                    className={`message-item ${isMyMessage ? "my-message" : "other-message"}`}
+                                    key={index}
+                                    ref={index === messages.length - 1 ? messagesEndRef : null}
+                                >
                                     <div className="message-header">
-                                        <span className="message-name">{message.name}</span>
-                                        <span className="message-time">{message.createAt}</span>
+                                        <span className="message-name">{msg.name}</span>
+                                        <span className="message-time">{msg.createAt}</span>
                                     </div>
-                                    <div className="message-content">{message.content}</div>
+                                    <div className="message-content">{msg.content}</div>
                                 </div>
                             );
                         })}
@@ -204,14 +177,13 @@ function ChatRoom(props) {
                         onChange={(e) => setMessage(e.target.value)}
                         onKeyDown={handleKeyPress}
                     />
-                    <button className="send-button" onClick={sendMessage}>
+                    <button className="send-button" onClick={sendMessage} disabled={isSending}>
                         전송
                     </button>
                 </div>
             </div>
         </div>
     );
-
 }
 
 export default ChatRoom;

@@ -1,8 +1,9 @@
 import axios from "axios";
+import axiosInstance from './axiosInstance'
 
 export const chatRoomList = async () => {
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/list`,{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/chat/list`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -19,7 +20,7 @@ export const chatRoomList = async () => {
 export const chatRoomCreate = async (id) => {
 
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/create/private/${id}`,{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/chat/create/private/${id}`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -34,10 +35,10 @@ export const chatRoomCreate = async (id) => {
 }
 
 export const chatPrivateGet = async (data) => {
-    console.log("챗 들어온 데이터")
+    console.log("챗 들어온 데이터 "+data)
     const accountId = data;
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/get/${accountId}`,{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/chat/get/${accountId}`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -55,7 +56,7 @@ export const chatMsgGet = async (data) => {
     console.log("챗 들어온 데이터")
     const id = data;
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/chat/msg/${id}`,{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/chat/msg/${id}`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -72,7 +73,7 @@ export const chatMsgGet = async (data) => {
 export const chatCreateGroup = async (data) => {
     console.log("들어온 단톡방 생성 "+JSON.stringify(data))
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/chat/create/group`,data,{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/chat/create/group`,data,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),

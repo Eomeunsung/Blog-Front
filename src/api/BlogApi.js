@@ -1,4 +1,5 @@
 import axios from "axios";
+import axiosInstance from './axiosInstance';  // axiosInstance 임포트
 
 export const getBlog  = async () => {
     try{
@@ -32,7 +33,7 @@ export const getDetailBlog  = async (id) => {
 export const writeBlog = async (data) => {
     console.log("받아온 데이터 "+JSON.stringify(data))
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/blog/write`,data,{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/blog/write`,data,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -41,6 +42,7 @@ export const writeBlog = async (data) => {
         console.log("블로그 작성 성공 "+res);
     }catch (error) {
         console.log(error);
+        console.log("쓰기 에러 "+error.response.data)
         console.log(error.response.status);
         throw error.response.status
     }
@@ -48,7 +50,7 @@ export const writeBlog = async (data) => {
 
 export const deleteBlog = async (id) => {
     try{
-        const res = await axios.delete(`${process.env.REACT_APP_URL}/blog/${id}`,{
+        const res = await axiosInstance.delete(`${process.env.REACT_APP_URL}/blog/${id}`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -64,7 +66,7 @@ export const deleteBlog = async (id) => {
 export const imgUpload = async (formData) => {
     console.log("보내기 전 "+formData.getAll("files"));
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/blog/upload`,formData,{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/blog/upload`,formData,{
             headers:{
                 "Content-Type": "multipart/form-data",
             }
@@ -87,7 +89,7 @@ export const imgUpload = async (formData) => {
 
 export const blogUpdate = async (data) => {
     try{
-        const res = await axios.put(`${process.env.REACT_APP_URL}/blog`,data,{
+        const res = await axiosInstance.put(`${process.env.REACT_APP_URL}/blog`,data,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -102,7 +104,7 @@ export const blogUpdate = async (data) => {
 export const commentWrite = async (data) => {
     console.log("댓글 데이터 "+data.blogId+" "+data.content)
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/comment`,data,{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/comment`,data,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),

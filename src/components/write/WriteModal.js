@@ -26,13 +26,11 @@ const WriteModal = ({ blog, closeModal, urlimgList  }) => {
         })
             .catch((err)=>{
                 console.log("에러 "+err)
-                if(err===401 || err===403){
-                    localStorage.removeItem("jwt");
-                    localStorage.removeItem("name");
-                    alert("로그인 다시 진행해주십시오");
-                    navigate("/login")
-                }
-
+                localStorage.removeItem("jwt");
+                localStorage.removeItem("name");
+                localStorage.removeItem("email")
+                alert("로그인 다시 진행해주십시오");
+                navigate("/login")
             })
 
         closeModal(); // 모달 닫기

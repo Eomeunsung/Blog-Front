@@ -3,6 +3,7 @@ import '../../css/List.css'
 import DetailPage from '../detail/DetailPage'
 import {getBlog} from "../../api/BlogApi"
 import {useLocation} from "react-router-dom";
+import {refreshToken} from "../../api/axiosInstance";
 
 
 const initState = {
@@ -63,6 +64,12 @@ function ListPage(props) {
             }); // result.data는 함수가 아니라 데이터입니다.
     }, [location, renewal]);
 
+    const refreshbutton =()=>{
+        refreshToken().then(() => {
+
+        }).catch((err) => {})
+    }
+
 
     return (
         <div>
@@ -106,6 +113,7 @@ function ListPage(props) {
                                 <h6>{value.title}</h6>
                                 <p>{value.localDate}</p>
                                 <p>{value.userName}</p>
+                                <button onClick={() => refreshbutton()}>리프레쉬 버튼</button>
                             </div>
                         ))
                     ) : (

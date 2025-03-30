@@ -62,6 +62,7 @@ function FriendPage() {
             })
     }
     const handleChatRoom = (id) =>{
+        console.log("들어온 친구 아이디 "+id)
         const data = {
             id: id,
             chatRoomFlag: false,
@@ -74,6 +75,7 @@ function FriendPage() {
                 setFriendReq(res.data);
             })
             .catch((err) => {
+                console.log(err)
                 console.error("친구 요청 가져오기 실패", err);
             });
     }, []);
@@ -84,6 +86,7 @@ function FriendPage() {
                 setFriends(res.data);
             })
             .catch((err) => {
+                console.log(err)
                 console.error("친구 목록을 가져오는 데 실패했습니다.", err);
             });
     }, []);

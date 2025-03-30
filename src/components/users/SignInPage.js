@@ -23,13 +23,14 @@ const SignInPage = () => {
                     if(response.code==="403"){
                         setError(response.message);
                     }else if(response.code==="200"){
-                        localStorage.setItem("jwt",response.data.jwt)
+                        localStorage.setItem("jwt",response.data.accessToken)
                         localStorage.setItem("name",response.data.name)
                         localStorage.setItem("email",response.data.email)
                         window.location.href="/";
                     }
                 })
                 .catch(error => {
+                    console.log(error)
                     setError(error.response.data.message);
                 });
 

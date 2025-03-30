@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import axiosInstance from "./axiosInstance";
 export const createAccount  = async (data) => {
     console.log("회원가입 보내는 데이터 "+data)
     try{
@@ -23,6 +23,7 @@ export const signIn  = async (data) => {
                 "Content-Type": "application/json",
             }
         });
+        console.log(JSON.stringify(res));
         return res.data;
     }catch (error) {
         throw error;
@@ -32,7 +33,7 @@ export const signIn  = async (data) => {
 
 export const myProfile  = async () => {
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/user/myprofile`,{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/user/myprofile`,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -48,7 +49,7 @@ export const myProfile  = async () => {
 
 export const myProfileUpdate  = async (data) => {
     try{
-        const res = await axios.put(`${process.env.REACT_APP_URL}/user/myprofile`, data,{
+        const res = await axiosInstance.put(`${process.env.REACT_APP_URL}/user/myprofile`, data,{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),

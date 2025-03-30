@@ -1,23 +1,40 @@
 import axios from "axios";
+import axiosInstance from './axiosInstance';  // axiosInstance 임포트
 
-export const friendGet  = async (data) => {
-    try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/friend`, {
-            headers : {
-                "Content-Type": "application/json",
-                Authorization: "Bearer "+localStorage.getItem("jwt"),
-            }
-        });
-        console.log("친구 목록 조회 "+JSON.stringify(res.data));
+export const friendGet = async () => {
+    try {
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/friend`);
+        console.log("친구 목록 조회 " + res);
+        console.log("친구 목록 조회2 " + JSON.stringify(res));
         return res.data;
-    }catch (error) {
+    } catch (error) {
+        console.log("친구 조회 에러 " + error.message);  // "토큰이 만료되었습니다"
+        console.log("친구 조회 에러2 " + error);
         throw error;
     }
 }
 
+// export const friendGet  = async (data) => {
+//     try{
+//         const res = await axios.get(`${process.env.REACT_APP_URL}/friend`, {
+//             headers : {
+//                 "Content-Type": "application/json",
+//                 Authorization: "Bearer "+localStorage.getItem("jwt"),
+//             }
+//         });
+//         console.log("친구 목록 조회 "+res);
+//         console.log("친구 목록 조회2 "+JSON.stringify(res));
+//         return res.data;
+//     }catch (error) {
+//         console.log("친구 조회 에러러 "+error.message); // "토큰이 만료되었습니다
+//         console.log("친구 조회 에러2 "+error);
+//         throw error;
+//     }
+// }
+
 export const friendRequest = async (id) => {
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/friendRequest`, {
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/friendRequest`, {
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -26,13 +43,15 @@ export const friendRequest = async (id) => {
         console.log("친구 요청 조회 "+JSON.stringify(res.data));
         return res.data;
     }catch (error) {
+        console.log("친구 요청 에러러 "+error.response.data.message); // "토큰이 만료되었습니다
+        console.log(error)
         throw error;
     }
 }
 
 export const friendAccept = async (id) => {
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/friendAccept/${id}`, {},{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/friendAccept/${id}`, {},{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -48,10 +67,26 @@ export const friendAccept = async (id) => {
 
 export const searchFriends  = async (data) => {
     try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/searchFriend"`, {
+        const res = await axios.get(`${process.env.REACT_APP_URL}/searchFriend`, {
             params: {data}
         });
-        console.log("친구 목록 조회 "+JSON.stringify(res.data));
+        console.log("친구 목록 조회 "+JSON.stringify(res));
+        return res.data;
+    }catch (error) {
+
+        console.log("에러 "+error);
+        throw error;
+    }
+}
+
+export const recommendSearch  = async (data) => {
+    try{
+        const res = await axiosInstance.get(`${process.env.REACT_APP_URL}/search`, {
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        });
         return res.data;
     }catch (error) {
         console.log(error);
@@ -59,25 +94,10 @@ export const searchFriends  = async (data) => {
     }
 }
 
-export const recommendSearch  = async (data) => {
-    try{
-        const res = await axios.get(`${process.env.REACT_APP_URL}/search`, {
-            headers : {
-                "Content-Type": "application/json",
-                Authorization: "Bearer "+localStorage.getItem("jwt"),
-            }
-        });
-        console.log("추천 친구 목록 조회 "+JSON.stringify(res.data));
-        return res.data;
-    }catch (error) {
-        throw error;
-    }
-}
-
 export const friendAdd  = async (id) => {
     console.log("들어온 친추 아이디 "+id)
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/friendAdd/${id}`, {},{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/friendAdd/${id}`, {},{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
@@ -109,13 +129,12 @@ export const friendProfile  = async (id) => {
 
 export const friendDelete  = async (id) => {
     try{
-        const res = await axios.post(`${process.env.REACT_APP_URL}/friendDelete/${id}`,{},{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/friendDelete/${id}`,{},{
             headers : {
                 "Content-Type": "application/json",
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         });
-        console.log("삭제 완료 "+res.data)
         return res.data;
     }catch (error) {
         console.log(error);
