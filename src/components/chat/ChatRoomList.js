@@ -124,6 +124,7 @@ function ChatRoomList(props) {
                                     <div className="chat-room-card">
                                         <h3 className="chat-room-title">{room.name}</h3>
                                         <p className="chat-room-description">{room.createAt}</p>
+                                        <p className="chat-room-type">{room.type}</p> {/* 오른쪽 하단에 배치될 타입 */}
                                     </div>
                                 </li>
                             ))}

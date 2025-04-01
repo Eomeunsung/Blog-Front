@@ -4,6 +4,7 @@ import SockJS from "sockjs-client"; // SockJS 클라이언트
 import { useLocation } from "react-router-dom";
 import { chatPrivateGet, chatRoomCreate, chatMsgGet } from "./../../api/ChatApi";
 import "../../css/chat/ChatRoom.css";
+import { IoPaperPlaneOutline } from "react-icons/io5";
 
 const SOCKET_URL = "http://localhost:8080/ws";
 const init = { name: "", content: "", createAt: "" };
@@ -17,7 +18,7 @@ function ChatRoom(props) {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([init]);
     const [roomId, setRoomId] = useState(0);
-
+    const [userList, setUserList] = useState([]);
     const stompClientRef = useRef(null);
     const inputRef = useRef(null);
     const messagesEndRef = useRef(null);
@@ -31,6 +32,7 @@ function ChatRoom(props) {
                         handleCreateChat();
                     } else {
                         setRoomId(res.data.roomId);
+                        setUserList(res.data.username)
                         setMessages(
                             res.data.chatMessageGetDtoList.map((item) => ({
                                 name: item.name,
@@ -99,6 +101,7 @@ function ChatRoom(props) {
                 stompClientRef.current = stompClient;
                 stompClient.subscribe(`/topic/chat/${roomId}`, (message) => {
                     if (message.body) {
+                        console.log("바디 "+message.body)
                         const newMessage = JSON.parse(message.body);
                         setMessages((prevMessages) => [...prevMessages, newMessage]);
                         setMessage("");
@@ -177,11 +180,32 @@ function ChatRoom(props) {
                         onChange={(e) => setMessage(e.target.value)}
                         onKeyDown={handleKeyPress}
                     />
-                    <button className="send-button" onClick={sendMessage} disabled={isSending}>
-                        전송
-                    </button>
+                    <IoPaperPlaneOutline className="send-button" onClick={sendMessage} disabled={isSending}/>
+                    {/*<button className="send-button" onClick={sendMessage} disabled={isSending}>*/}
+                    {/*    전송*/}
+                    {/*</button>*/}
                 </div>
             </div>
+            <div className="chat-sidebar">
+                <h3 className="sidebar-title">참여자 목록</h3>
+                {userList && userList.length > 0 ? (
+                    <ul className="participant-list">
+                        {userList.map((participant, index) => (
+                            <li className="participant-item" key={index}>
+                                <img
+                                    src={participant.profileImage || "default-avatar.png"}
+                                    alt="profile"
+                                    className="profile-image"
+                                />
+                                <span className="participant-name">{participant}</span>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>참여자가 없습니다.</p>
+                )}
+            </div>
+
         </div>
     );
 }

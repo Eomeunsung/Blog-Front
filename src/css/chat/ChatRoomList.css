@@ -1,6 +1,6 @@
 /* 전체 컨테이너 스타일 */
 .chat-room-container {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -46,6 +46,26 @@ h2 {
     padding: 0;
     width: 100%; /* 채팅방 목록의 너비 100% */
 }
+
+/* 채팅방 카드 스타일 */
+.chat-room-card {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;  /* 자식 요소가 절대 위치를 가질 수 있도록 설정 */
+}
+
+/* 채팅방 타입 스타일 */
+.chat-room-type {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
 
 /* 각 채팅방 항목 스타일 */
 .chat-room-item {
