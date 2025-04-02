@@ -9,15 +9,11 @@ import { BsEmojiSmile } from "react-icons/bs";
 const profileData={
     email:"",
     name:"",
+    createAt:"",
     imgUrl:"",
 
 }
-const init={
-    email:"",
-    name:"",
-    createAt:"",
-    blogData:[]
-}
+
 const MyProfile = () => {
     const navigate = useNavigate();
     const [userProfile, setUserProfile] = useState(null);
@@ -50,7 +46,8 @@ const MyProfile = () => {
                 setLoadingBlogs(false);
                 profileData.email = result.data.email;
                 profileData.name = result.data.name;
-                profileData.profileImg = result.data.imgUrl;
+                profileData.createAt = result.data.createAt;
+                profileData.imgUrl = `${process.env.REACT_APP_URL}/${result.data.imgUrl}`;
                 console.log(`${process.env.REACT_APP_URL}/${userProfile.imgUrl}`)
             })
             .catch((err) => {
@@ -95,7 +92,7 @@ const MyProfile = () => {
                         <div className="profile-avatar-container">
                             {/*{userProfile.profileImg ? (*/}
                                 <img
-                                    src={`${process.env.REACT_APP_URL}/${userProfile.imgUrl}`}
+                                    src={profileData.imgUrl}
                                     alt="프로필 사진"
                                     className="profile-avatar"
                                 />
@@ -103,9 +100,9 @@ const MyProfile = () => {
                             {/*//     <BsEmojiSmile className="profile-avatar" />*/}
                             {/*// )}*/}
                                 <div className="profile-info">
-                                    <h2>{userProfile.name}</h2>
-                                    <p>{userProfile.email}</p>
-                                    <p className="created-at">{userProfile.createAt}</p>
+                                    <h2>{profileData.name}</h2>
+                                    <p>{profileData.email}</p>
+                                    <p className="created-at">{profileData.createAt}</p>
                                 </div>
                             </div>
                         </div>

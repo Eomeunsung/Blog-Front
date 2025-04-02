@@ -17,6 +17,7 @@ function FriendProfilePage({id, handleCloseProfile }) {
         friendProfile(id)
             .then((result) => {
                 setBlogs(result.data.blogData);
+                result.data.imgUrl = `${process.env.REACT_APP_URL}/${result.data.imgUrl}`;
                 setUserProfile(result.data);
                 setLoadingProfile(false)
             })
@@ -57,7 +58,7 @@ function FriendProfilePage({id, handleCloseProfile }) {
                         <div className="profile-header">
                             <div className="profile-avatar-container">
                                 <img
-                                    src={userProfile.avatarUrl}
+                                    src={userProfile.imgUrl}
                                     alt="프로필 사진"
                                     className="profile-avatar"
                                 />

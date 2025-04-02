@@ -32,7 +32,7 @@ function ChatRoom(props) {
                         handleCreateChat();
                     } else {
                         setRoomId(res.data.roomId);
-                        setUserList(res.data.username)
+                        setUserList(res.data.userprofile)
                         setMessages(
                             res.data.chatMessageGetDtoList.map((item) => ({
                                 name: item.name,
@@ -47,7 +47,7 @@ function ChatRoom(props) {
             chatMsgGet(data.id)
                 .then((res) => {
                     setRoomId(res.data.roomId);
-                    setUserList(res.data.username)
+                    setUserList(res.data.userprofile)
                     setMessages(
                         res.data.chatMessageGetDtoList.map((item) => ({
                             name: item.name,
@@ -194,11 +194,11 @@ function ChatRoom(props) {
                         {userList.map((participant, index) => (
                             <li className="participant-item" key={index}>
                                 <img
-                                    src={participant.profileImage || "default-avatar.png"}
+                                    src={`${process.env.REACT_APP_URL}/${participant.imgURl}`}
                                     alt="profile"
                                     className="profile-image"
                                 />
-                                <span className="participant-name">{participant}</span>
+                                <span className="participant-name">{participant.name}</span>
                             </li>
                         ))}
                     </ul>

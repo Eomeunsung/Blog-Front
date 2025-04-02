@@ -4,13 +4,12 @@ import {myProfileUpdate} from "../../api/UserApi"
 import {imgUpload} from "../../api/UserApi"
 
 const MyProfileUpdateModal = ({ profile, handleModal}) => {
-    const [isAvatarChanging, setIsAvatarChanging] = useState(false);
     const formData = new FormData();
     const [newName, setNewName] = useState('');
     const [newImg, setNewImg] = useState(null);
     const [uploadImg, setUploadImg] = useState(null);
     const [error, setError] = useState(null);
-
+    console.log("받아온 프로필 업데이트 "+JSON.stringify(profile))
     const handleNameChange = (e) => {
         setNewName(e.target.value);
     };
@@ -31,7 +30,9 @@ const MyProfileUpdateModal = ({ profile, handleModal}) => {
         // 이름이 비어있는지 확인
         if (newName === null || newName === "") {
             setNewName(profile.name);
-            return;
+            if (newName === null || newName === ""){
+                return;
+            }
         }
         const data = {
             name : newName,
