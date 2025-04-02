@@ -47,6 +47,7 @@ function ChatRoom(props) {
             chatMsgGet(data.id)
                 .then((res) => {
                     setRoomId(res.data.roomId);
+                    setUserList(res.data.username)
                     setMessages(
                         res.data.chatMessageGetDtoList.map((item) => ({
                             name: item.name,
@@ -202,7 +203,7 @@ function ChatRoom(props) {
                         ))}
                     </ul>
                 ) : (
-                    <p>참여자가 없습니다.</p>
+                    <div></div>
                 )}
             </div>
 

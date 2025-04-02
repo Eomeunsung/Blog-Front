@@ -179,6 +179,11 @@ body {
     padding: 0; /* 기본 패딩 제거 */
 }
 
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
 
 
 

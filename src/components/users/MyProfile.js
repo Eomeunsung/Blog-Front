@@ -4,11 +4,12 @@ import { myProfile } from "../../api/UserApi";
 import DetailPage from "../detail/DetailPage";
 import MyProfileUpdateModal from "./MyProfileUpdateModal";
 import {useNavigate} from "react-router-dom";
-
+import { BsEmojiSmile } from "react-icons/bs";
 
 const profileData={
     email:"",
     name:"",
+    imgUrl:"",
 
 }
 const init={
@@ -49,6 +50,8 @@ const MyProfile = () => {
                 setLoadingBlogs(false);
                 profileData.email = result.data.email;
                 profileData.name = result.data.name;
+                profileData.profileImg = result.data.imgUrl;
+                console.log(`${process.env.REACT_APP_URL}/${userProfile.imgUrl}`)
             })
             .catch((err) => {
                 console.log(err);
@@ -90,11 +93,15 @@ const MyProfile = () => {
                     <>
                     <div className="profile-header">
                         <div className="profile-avatar-container">
+                            {/*{userProfile.profileImg ? (*/}
                                 <img
-                                    src={userProfile.avatarUrl}
+                                    src={`${process.env.REACT_APP_URL}/${userProfile.imgUrl}`}
                                     alt="프로필 사진"
                                     className="profile-avatar"
                                 />
+                            {/*// ) : (*/}
+                            {/*//     <BsEmojiSmile className="profile-avatar" />*/}
+                            {/*// )}*/}
                                 <div className="profile-info">
                                     <h2>{userProfile.name}</h2>
                                     <p>{userProfile.email}</p>

@@ -42,7 +42,7 @@ axiosInstance.interceptors.request.use(
 );
 axiosInstance.interceptors.response.use(
     (response) => {
-        console.log("인터셉터 응답 "+JSON.stringify(response));
+        // console.log("인터셉터 응답 "+JSON.stringify(response));
         return response;  // 응답을 반환
     },
     (error) => {

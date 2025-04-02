@@ -64,15 +64,16 @@ export const deleteBlog = async (id) => {
 }
 
 export const imgUpload = async (formData) => {
-    console.log("보내기 전 "+formData.getAll("files"));
+    console.log("보내기 전 API "+formData.getAll("files"));
     try{
-        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/blog/upload`,formData,{
+        const res = await axios.post(`${process.env.REACT_APP_URL}/blog/upload`,formData,{
             headers:{
                 "Content-Type": "multipart/form-data",
             }
         });
         return res.data.data;
     }catch (error) {
+        console.log("이미지 업로드 에러 "+error)
         if (error.response) {
             // 서버에서 응답이 왔을 경우
             console.error("서버 응답 에러: ", error.response.data);

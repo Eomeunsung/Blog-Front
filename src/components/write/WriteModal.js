@@ -2,8 +2,7 @@ import React from "react";
 import '../../css/Modal.css';
 import {imgUpload, writeBlog} from "../../api/BlogApi";
 import {useNavigate} from "react-router-dom";
-import { RiSubtractFill } from "react-icons/ri";
-import { IoMdAdd } from "react-icons/io";
+
 
 const WriteModal = ({ blog, closeModal, urlimgList  }) => {
     const navigate = useNavigate();
