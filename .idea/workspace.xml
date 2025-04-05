@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/chat/ChatNameUpdateModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/chat/ChatNameUpdate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/friend/FriendProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/friend/FriendProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/MyProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/MyProfileUpdateModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/MyProfileUpdateModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ChatApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/axiosInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosInstance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/chat/ChatRoomList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/chat/ChatRoomList.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +173,8 @@
       <workItem from="1743566767113" duration="1906000" />
       <workItem from="1743569591424" duration="1994000" />
       <workItem from="1743599185837" duration="395000" />
-      <workItem from="1743606147967" duration="2881000" />
+      <workItem from="1743606147967" duration="3354000" />
+      <workItem from="1743828885005" duration="4066000" />
     </task>
     <servers />
   </component>

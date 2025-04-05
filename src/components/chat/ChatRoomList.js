@@ -4,6 +4,7 @@ import { chatRoomList } from "./../../api/ChatApi";
 import { useNavigate } from "react-router-dom";
 import {friendGet} from "../../api/FriendApi";
 import {chatCreateGroup} from "../../api/ChatApi";
+import ChatNameUpdateModal from "./ChatNameUpdateModal";
 
 function ChatRoomList(props) {
     const [errorMessage, setErrorMessage] = useState(""); // 에러 메시지 상태
@@ -13,6 +14,8 @@ function ChatRoomList(props) {
     const navigate = useNavigate();
     const [showGroup, setShowGroup] = useState(false);
     const [selectedFriends, setSelectedFriends] = useState([]);
+    const [nameUpdateFlag, setNameUpdateFlag] = useState(false);
+    const [chatData, setChatData] = useState(null);
 
     useEffect(() => {
         chatRoomList()
@@ -26,7 +29,7 @@ function ChatRoomList(props) {
                 console.error('채팅방 정보를 가져오는 데 실패했습니다.', err);
                 setChatRooms([]); // 에러 발생 시 빈 배열로 초기화
             });
-    }, [showGroup]);
+    }, [showGroup, nameUpdateFlag]);
 
     const handleChatRoom = (id) => {
         const data = {
@@ -105,64 +108,88 @@ function ChatRoomList(props) {
         setShowGroup(!showGroup);
     };
 
+    const handleNameUpdate =(data)=>{
+        if(data!==null){
+            setChatData(data);
+        }
+        setNameUpdateFlag(!nameUpdateFlag);
+    }
     return (
         <div>
-            {!showGroup ? (
-                <div className="chat-room-container">
-                    <h2>채팅방 목록</h2>
-                    <button className="create-group-chat-button" onClick={handleCreateGroupChat}>
-                        단체방 만들기
-                    </button>
-                    {chatRooms.length === 0 ? (
-                        <p className="no-chat-room">채팅방이 없습니다.</p>
-                    ) : (
-                        <ul className="chat-room-list">
-                            {chatRooms.map(room => (
-                                <li key={room.id} className="chat-room-item" onClick={() => {
-                                    handleChatRoom(room.id)
-                                }}>
-                                    <div className="chat-room-card">
-                                        <h3 className="chat-room-title">{room.name}</h3>
-                                        <p className="chat-room-description">{room.createAt}</p>
-                                        <p className="chat-room-type">{room.type}</p> {/* 오른쪽 하단에 배치될 타입 */}
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+            {!nameUpdateFlag ?
+                (
+                    <div>
+                        {!showGroup ? (
+                            <div className="chat-room-container">
+                                <h2>채팅방 목록</h2>
+                                <button className="create-group-chat-button" onClick={handleCreateGroupChat}>
+                                    단체방 만들기
+                                </button>
+                                {chatRooms.length === 0 ? (
+                                    <p className="no-chat-room">채팅방이 없습니다.</p>
+                                ) : (
+                                    <ul className="chat-room-list">
+                                        {chatRooms.map(room => (
+                                            <li key={room.id} className="chat-room-item" onClick={() => {
+                                                handleChatRoom(room.id)
+                                            }}>
+                                                <div className="chat-room-card">
+                                                    <h3 className="chat-room-title">{room.name}</h3>
+                                                    <p className="chat-room-description">{room.createAt}</p>
+                                                    <p className="chat-room-type">{room.type}</p> {/* 오른쪽 하단에 배치될 타입 */}
+                                                    <button
+                                                        className="edit-room-name-button"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();  // 클릭 이벤트 버블링 방지
+                                                            console.log("채팅방 이름 수정 버튼 클릭");
+                                                            // 여기에 수정 모달 오픈 등의 로직 추가 가능
+                                                            handleNameUpdate(room)
+                                                        }}
+                                                    >
+                                                        채팅방 이름 수정
+                                                    </button>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
 
-            ) : (
-                <div className="friend-list-modal">
-                    <h2>친구 목록</h2>
-                    <input
-                        type="text"
-                        placeholder="방 제목을 입력하세요"
-                        value={roomTitle}
-                        onChange={(e) => setRoomTitle(e.target.value)} // 방 제목 변경
-                    />
-                    {errorMessage && <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>}  {/* 에러 메시지 표시 */}
-                    <ul className="friend-list">
-                        {friends.map(friend => (
-                            <li key={friend.id} className="friend-item">
+                        ) : (
+                            <div className="friend-list-modal">
+                                <h2>친구 목록</h2>
                                 <input
-                                    type="checkbox"
-                                    id={friend.id}
-                                    onChange={() => handleCheckboxChange(friend.id)}
+                                    type="text"
+                                    placeholder="방 제목을 입력하세요"
+                                    value={roomTitle}
+                                    onChange={(e) => setRoomTitle(e.target.value)} // 방 제목 변경
                                 />
-                                <label htmlFor={friend.id}>{friend.name}</label>
-                            </li>
-                        ))}
-                    </ul>
-                    <button className="create-room-button" onClick={handleCreateRoom}>
-                        방 생성
-                    </button>
-                    <button className="create-room-button" onClick={handleCreateGroupChat}>
-                        채팅 목록
-                    </button>
-                </div>
-            )}
-
+                                {errorMessage && <p style={{ color: 'red', fontSize: '14px' }}>{errorMessage}</p>}  {/* 에러 메시지 표시 */}
+                                <ul className="friend-list">
+                                    {friends.map(friend => (
+                                        <li key={friend.id} className="friend-item">
+                                            <input
+                                                type="checkbox"
+                                                id={friend.id}
+                                                onChange={() => handleCheckboxChange(friend.id)}
+                                            />
+                                            <label htmlFor={friend.id}>{friend.name}</label>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <button className="create-room-button" onClick={handleCreateRoom}>
+                                    방 생성
+                                </button>
+                                <button className="create-room-button" onClick={handleCreateGroupChat}>
+                                    채팅 목록
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                ):(
+                    <ChatNameUpdateModal data={chatData} onClose={()=> setNameUpdateFlag(!nameUpdateFlag)}></ChatNameUpdateModal>
+                )
+            }
         </div>
     );
 }

@@ -87,4 +87,20 @@ export const chatCreateGroup = async (data) => {
     }
 }
 
+export const chatNameUpdate = async (data) => {
+    console.log("들어온 단톡방 생성 "+JSON.stringify(data))
+    try{
+        const res = await axiosInstance.post(`${process.env.REACT_APP_URL}/chat/name/update`,data,{
+            headers : {
+                "Content-Type": "application/json",
+                Authorization: "Bearer "+localStorage.getItem("jwt"),
+            }
+        })
+        console.log(res.data);
+        return res.data;
+    }catch (error) {
+        console.log(error)
+        throw error.response.status;
+    }
+}
 

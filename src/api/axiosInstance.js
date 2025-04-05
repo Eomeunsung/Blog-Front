@@ -46,14 +46,21 @@ axiosInstance.interceptors.response.use(
         return response;  // 응답을 반환
     },
     (error) => {
+        if (error.response && error.response.status === 401) {
+            localStorage.removeItem("jwt");
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            alert("세션이 만료되어 다시 로그인 해주세요.");
+            window.location.href = "/login";
+        }
 
-        localStorage.removeItem("token"); // 토큰 삭제
-        localStorage.removeItem("name");
-        localStorage.removeItem("email");
-        alert("다시 로그인 해주시기 바랍니다.")
-        window.location.href = "/login"; // 로그인 페이지로 리디렉트
-
-        console.log("인터셉터"+error);
+        // localStorage.removeItem("jwt"); // 토큰 삭제
+        //         // localStorage.removeItem("name");
+        //         // localStorage.removeItem("email");
+        //         // alert("다시 로그인 해주시기 바랍니다.")
+        //         // window.location.href = "/login"; // 로그인 페이지로 리디렉트
+        //         //
+                console.log("인터셉터"+error);
         return Promise.reject(error);  // 응답 에러 반환
     }
 );
