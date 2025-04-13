@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277978fe-4b62-4b72-94c8-5c9f198a9fb2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/chat/ChatNameUpdateModal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/chat/ChatNameUpdate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/AdminApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/NavComponent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/AdminLayout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/AdminSidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/AdminUserPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/DetailUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/RoleCreate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/RolePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/AdminLayout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/AdminSidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/AdminUser.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/DetailUser.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/RoleCreate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/admin/RolePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/ChatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ChatApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/FriendApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/FriendApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/axiosInstance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/axiosInstance.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/ChatRoomList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/chat/ChatRoomList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/chat/ChatRoomList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/write/WritePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/write/WritePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +97,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/css/admin" />
       <recent name="$PROJECT_DIR$/src/css/user" />
       <recent name="$PROJECT_DIR$/src/css/friend" />
       <recent name="$PROJECT_DIR$/src/css/profile" />
       <recent name="$PROJECT_DIR$/src/css/detail" />
-      <recent name="$PROJECT_DIR$/src/css/Chat" />
     </key>
   </component>
   <component name="RunManager">
@@ -174,7 +187,12 @@
       <workItem from="1743569591424" duration="1994000" />
       <workItem from="1743599185837" duration="395000" />
       <workItem from="1743606147967" duration="3354000" />
-      <workItem from="1743828885005" duration="4066000" />
+      <workItem from="1743828885005" duration="4218000" />
+      <workItem from="1744025826854" duration="769000" />
+      <workItem from="1744026799622" duration="144000" />
+      <workItem from="1744336664444" duration="33000" />
+      <workItem from="1744336711653" duration="6252000" />
+      <workItem from="1744436791515" duration="16324000" />
     </task>
     <servers />
   </component>

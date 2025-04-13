@@ -2,7 +2,6 @@ import ReactQuill from "react-quill";
 import React, { useEffect, useState } from "react";
 import { formats } from "../../config/quill/editor/ToobarOption";
 import Form from "react-bootstrap/Form";
-import { BiSolidEditAlt } from "react-icons/bi";
 import WriteModal from "./WriteModal";
 import { changeImg } from "../../config/ChangeImg";
 import { modules } from "../../config/moudle/QuillModules";

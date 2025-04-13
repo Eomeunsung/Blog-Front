@@ -40,6 +40,7 @@ export const friendRequest = async (id) => {
                 Authorization: "Bearer "+localStorage.getItem("jwt"),
             }
         });
+
         console.log("친구 요청 조회 "+JSON.stringify(res.data));
         return res.data;
     }catch (error) {

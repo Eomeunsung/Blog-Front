@@ -1,0 +1,170 @@
+.detail-user-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.detail-user-container p {
+    margin: 16px 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+}
+
+.detail-user-container strong {
+    color: #000;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.detail-user-container ul {
+    margin-top: 12px;
+    padding-left: 24px;
+}
+
+.detail-user-container li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.close-button {
+    margin-top: 30px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.role-badge-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.role-badge {
+    background-color: #e3f2fd;
+    color: #007bff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.user-edit-container {
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.section-subtitle {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-row label {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.editable-input {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #444;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.role-badge-group {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.role-badge {
+    background-color: #e3f2fd;
+    color: #007bff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.button-row {
+    margin-top: 24px;
+    text-align: right;
+}
+
+.action-button {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 12px 16px;
+    border-radius: 8px;
+}

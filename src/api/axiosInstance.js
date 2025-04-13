@@ -36,7 +36,6 @@ axiosInstance.interceptors.request.use(
         return config;  // 요청 config 반환
     },
     (error) => {
-        console.log("인터셉터"+error);
         return Promise.reject(error);  // 에러 반환
     }
 );
@@ -46,6 +45,7 @@ axiosInstance.interceptors.response.use(
         return response;  // 응답을 반환
     },
     (error) => {
+        console.log("인터 셉터 오류 "+error)
         if (error.response && error.response.status === 401) {
             localStorage.removeItem("jwt");
             localStorage.removeItem("name");
