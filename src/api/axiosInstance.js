@@ -53,6 +53,10 @@ axiosInstance.interceptors.response.use(
             alert("세션이 만료되어 다시 로그인 해주세요.");
             window.location.href = "/login";
         }
+        if(error.response && error.response.status === 403){
+            alert("권한이 없습니다.");
+            window.location.href = "/";
+        }
 
         // localStorage.removeItem("jwt"); // 토큰 삭제
         //         // localStorage.removeItem("name");

@@ -47,6 +47,7 @@ function ListPage(props) {
                     console.log("result "+JSON.stringify(result));
                     setBlog(result);
                     setRenewal(false);
+                    setConnection(true)
 
                 } else {
                     // 오류 발생 시 필요한 추가 처리

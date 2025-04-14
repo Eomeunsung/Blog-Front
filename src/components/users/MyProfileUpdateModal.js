@@ -78,7 +78,7 @@ const MyProfileUpdateModal = ({ profile, handleModal}) => {
     }
 
     return (
-        <div className="modal-overlay">
+        <div className="update-modal-overlay">
             <div className="modal-container">
                 {/* 프로필 수정 모달 */}
                 <div className="profile-header">

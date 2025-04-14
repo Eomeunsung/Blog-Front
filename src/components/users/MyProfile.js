@@ -43,11 +43,13 @@ const MyProfile = () => {
             .then((result) => {
                 setBlogs(result.data.blogData);
                 setUserProfile(result.data);
+                console.log(result.data);
                 setLoadingBlogs(false);
                 profileData.email = result.data.email;
                 profileData.name = result.data.name;
                 profileData.createAt = result.data.createAt;
                 profileData.imgUrl = `${process.env.REACT_APP_URL}/${result.data.imgUrl}`;
+                console.log(profileData.imgUrl);
                 console.log(`${process.env.REACT_APP_URL}/${userProfile.imgUrl}`)
             })
             .catch((err) => {
@@ -83,40 +85,42 @@ const MyProfile = () => {
     }
 
     return (
-        <div className="container">
+        <div>
             {/* 프로필 컨테이너 */}
-            <div className="profile-container">
-                {userProfile && (
-                    <>
-                    <div className="profile-header">
-                        <div className="profile-avatar-container">
-                            {/*{userProfile.profileImg ? (*/}
-                                <img
-                                    src={profileData.imgUrl}
-                                    alt="프로필 사진"
-                                    className="profile-avatar"
-                                />
-                            {/*// ) : (*/}
-                            {/*//     <BsEmojiSmile className="profile-avatar" />*/}
-                            {/*// )}*/}
-                                <div className="profile-info">
-                                    <h2>{profileData.name}</h2>
-                                    <p>{profileData.email}</p>
-                                    <p className="created-at">{profileData.createAt}</p>
+            <div  className="container">
+                <div className="profile-container">
+                    {userProfile && (
+                        <>
+                        <div className="profile-header">
+                            <div className="profile-avatar-container">
+                                {/*{userProfile.profileImg ? (*/}
+                                    <img
+                                        src={profileData.imgUrl}
+                                        alt="프로필 사진"
+                                        className="profile-avatar"
+                                    />
+                                {/*// ) : (*/}
+                                {/*//     <BsEmojiSmile className="profile-avatar" />*/}
+                                {/*// )}*/}
+                                    <div className="profile-info">
+                                        <h2>{profileData.name}</h2>
+                                        <p>{profileData.email}</p>
+                                        <p className="created-at">{profileData.createAt}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* 버튼을 별도로 분리 */}
-                        <div className="profile-buttons">
-                            <button onClick={() => {handleModal()}}>
-                                프로필 수정
-                            </button>
-                            <button onClick={()=>{navigate("/friend")}}>친구 목록</button>
+                            {/* 버튼을 별도로 분리 */}
+                            <div className="profile-buttons">
+                                <button onClick={() => {handleModal()}}>
+                                    프로필 수정
+                                </button>
+                                <button onClick={()=>{navigate("/friend")}}>친구 목록</button>
+                            </div>
+                        </>
+                        )}
                         </div>
-                    </>
-                    )}
-                    </div>
+                </div>
 
                 {/*{selectedBlog && layout ? (*/}
             {layout ? (
@@ -151,7 +155,7 @@ const MyProfile = () => {
                     <div className="modal-background" onClick={handleModal}></div>
 
                     {/* 모달 내용 */}
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                    <div className="update-modal-content" onClick={(e) => e.stopPropagation()}>
                         <MyProfileUpdateModal handleModal={handleModal} profile={profileData}/>
                     </div>
                 </>
