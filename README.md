@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+개인 프로젝트로 개발한 **React + Spring Boot** 기반 블로그 웹 애플리케이션 입니다.
+게시글 CRUD 기능을 중심으로 전체 개발 과정을 혼자서 설계 및 구현 하였습니다.
 
-## Available Scripts
+## 주요 기능 
+- 게시글 작성 / 조회 / 수정 / 삭제 기능 (CRUD)
+- 게시글 목록 페이지 / 상세 페이지 구현 / 프로필 페이지
+- **1:1 채팅 기능** (WebSocket 기반 실시간 채팅)
+- **단체 체팅 기능** (채팅방 생성 / 참여 / 메시지 전송)
+- **사용자 인증 / 인가 (JWT 기반)** 로그인 / 회원가입 / 권한 관리
+- REST API 설계 및 구현
 
-In the project directory, you can run:
+## 기술 스택
+- **Frontend**: React, React Router, Axios
+- **Backend**: Spring Boot, Spring Data JPA, Spring Security, JWT WebSocket, MariaDB
+- **Version Control**: Git, GitHub
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 프로젝트 후기
+처음으로 프론트엔드와 백엔드 전반을 혼자서 개발한 프로젝트입니다.
+백엔드는 Spring Boot 기반으로 직접 REST API 및 WebSocket 기반 채팅 기능을 설계하고 구현하였고,
+프론트 엔드는 React가 처음이라 AI를 활용하여 구현하였습니다.
+  
