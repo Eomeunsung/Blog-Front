@@ -25,29 +25,36 @@
 ## 프로젝트 결과물
 ![스크린샷 2025-06-17 13 16 02](https://github.com/user-attachments/assets/8aec36de-f083-4ae5-8603-68b4d2a34651)
 - **메인화면**
+---
   
 ![스크린샷 2025-06-17 13 15 37](https://github.com/user-attachments/assets/b78b5676-c381-4e82-83c9-06f104d01796)
 - **회원가입 화면**
+---
 
 ![스크린샷 2025-06-17 13 17 31](https://github.com/user-attachments/assets/c3aacb6a-51e0-4d6b-bf1d-550d6536553f)
 - **블로그 글 작성 화면**
+---
 
 ![스크린샷 2025-06-17 13 18 10](https://github.com/user-attachments/assets/cb4ad88b-1159-4d57-83c3-478a27eb142e)
 - **블로그 및 댓글 작성 화면*
+---
 
 ![스크린샷 2025-06-17 13 19 33](https://github.com/user-attachments/assets/8a0c5fd6-6793-49b7-98c3-c15d092f8689)
 - **친구 찾기 화면**
+---
 
 ![스크린샷 2025-06-17 13 20 37](https://github.com/user-attachments/assets/a89e5fa2-223a-454d-8629-3dcfef898473)
 - **친구 목록 및 요청 받으 친구 화면**
+---
 
 ![스크린샷 2025-06-17 13 22 17](https://github.com/user-attachments/assets/6977a32e-e817-425a-9ab5-bd52cb4fb803)
+- **개인 채팅 화면**
+---
 
 <img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/7c549c61-cec2-4726-a8c0-e80445834075" />
-- **개인 채팅 화면**
-
-
 - **단체 채팅 화면**
+---
 
 ![스크린샷 2025-06-17 13 22 30](https://github.com/user-attachments/assets/852390b2-b4e5-4bdb-a554-2f1f45ff8b0b)
 - **채팅 목록**
+---
