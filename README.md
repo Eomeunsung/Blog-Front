@@ -51,10 +51,11 @@
 - **개인 채팅 화면**
 ---
 
-<img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/7c549c61-cec2-4726-a8c0-e80445834075" />
+<img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/0d3cf6f8-4f42-4599-ac83-a756e581a5f9" />
 - **단체 채팅 화면**
 ---
 
 ![스크린샷 2025-06-17 13 22 30](https://github.com/user-attachments/assets/852390b2-b4e5-4bdb-a554-2f1f45ff8b0b)
 - **채팅 목록**
 ---
+
