@@ -51,7 +51,7 @@
 - **개인 채팅 화면**
 ---
 
-!<img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/0d3cf6f8-4f42-4599-ac83-a756e581a5f9" />
+ <img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/0d3cf6f8-4f42-4599-ac83-a756e581a5f9" />
 - **단체 채팅 화면**
 ---
 
