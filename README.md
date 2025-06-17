@@ -20,4 +20,8 @@
 처음으로 프론트엔드와 백엔드 전반을 혼자서 개발한 프로젝트입니다.
 백엔드는 Spring Boot 기반으로 직접 REST API 및 WebSocket 기반 채팅 기능을 설계하고 구현하였고,
 프론트 엔드는 React가 처음이라 AI를 활용하여 구현하였습니다.
-  
+
+![스크린샷 2025-06-17 13 16 02](https://github.com/user-attachments/assets/8aec36de-f083-4ae5-8603-68b4d2a34651)
+
+##프로젝트 결과물
+
