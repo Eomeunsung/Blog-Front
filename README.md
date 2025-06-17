@@ -29,5 +29,10 @@
 ![스크린샷 2025-06-17 13 15 37](https://github.com/user-attachments/assets/b78b5676-c381-4e82-83c9-06f104d01796)
 - **회원가입 화면
 
+![스크린샷 2025-06-17 13 17 31](https://github.com/user-attachments/assets/c3aacb6a-51e0-4d6b-bf1d-550d6536553f)
+- **블로그 글 작성 화면
+
+
+
 
 
