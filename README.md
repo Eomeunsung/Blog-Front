@@ -41,10 +41,9 @@
 ![스크린샷 2025-06-17 13 20 37](https://github.com/user-attachments/assets/a89e5fa2-223a-454d-8629-3dcfef898473)
 - **친구 목록 및 요청 받으 친구 화면**
 
-![스크린샷 2025-06-17 13 22 17](https://github.com/user-attachment
+![스크린샷 2025-06-17 13 22 17](https://github.com/user-attachments/assets/6977a32e-e817-425a-9ab5-bd52cb4fb803)
 
 <img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/7c549c61-cec2-4726-a8c0-e80445834075" />
-s/assets/6977a32e-e817-425a-9ab5-bd52cb4fb803)
 - **개인 채팅 화면**
 
 
