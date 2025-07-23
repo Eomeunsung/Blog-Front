@@ -56,13 +56,14 @@
 
   
    <tr>
-    <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 51 24" src="https://github.com/user-attachments/assets/864c89e1-2195-45f3-a75b-2f708fa8d936" /></td>
+    <td><img width="764" height="583" alt="스크린샷 2025-07-23 14 51 03" src="https://github.com/user-attachments/assets/08047fa3-0691-4c61-aea4-3de3ee50af77" /></td>
     <td><img width="476" height="599" alt="스크린샷 2025-07-23 14 30 59" src="https://github.com/user-attachments/assets/de9c85a9-d24e-4f9a-a436-edba3f552b92" /></td>
   </tr>
   <tr>
-    <td align="center">친구 요청</td>
+    <td align="center">회원가입</td>
     <td align="center">로그인</td>
   </tr>
+  
 </table>
 
 ---
