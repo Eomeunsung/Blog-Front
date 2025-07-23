@@ -36,7 +36,7 @@
 ---
 
 ![스크린샷 2025-06-17 13 18 10](https://github.com/user-attachments/assets/cb4ad88b-1159-4d57-83c3-478a27eb142e)
-- **블로그 및 댓글 작성 화면*
+- **블로그 및 댓글 작성 화면**
 ---
 
 ![스크린샷 2025-06-17 13 19 33](https://github.com/user-attachments/assets/8a0c5fd6-6793-49b7-98c3-c15d092f8689)
@@ -52,6 +52,7 @@
 ---
 
 <img width="920" alt="스크린샷 2025-06-17 13 23 49" src="https://github.com/user-attachments/assets/0d3cf6f8-4f42-4599-ac83-a756e581a5f9" />
+
 - **단체 채팅 화면**
 ---
 
