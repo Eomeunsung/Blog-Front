@@ -28,15 +28,27 @@
 ## 흐름도
 <table>
   <tr>
+    <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
+    <td><img width="335" height="585" alt="스크린샷 2025-07-23 13 29 40" src="https://github.com/user-attachments/assets/c4b038e0-1cfb-4676-a365-07e188ed3832" /></td>
+  </tr>
+
+  <tr>
+    <td align="center">Blog 작성</td>
+    <td align="center">Blog 수정</td>
+  </tr>
+
+ <tr>
     <td><img width="449" height="607" alt="스크린샷 2025-07-23 13 11 13" src="https://github.com/user-attachments/assets/f642dc66-69ef-4637-b73b-706ae0e8a0b2" /></td>
     <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
   </tr>
 
   <tr>
-    <td align="center"> - **채팅 흐름도** </td>
+    <td align="center">채팅 흐름도</td>
     <td align="center">채팅방 생성 로직</td>
   </tr>
 </table>
+
+
 
 
 
