@@ -27,6 +27,7 @@
 
 ## 흐름도
 <img width="449" height="607" alt="스크린샷 2025-07-23 13 11 13" src="https://github.com/user-attachments/assets/f642dc66-69ef-4637-b73b-706ae0e8a0b2" />
+
 - **채팅 흐름도**
 ---
 
