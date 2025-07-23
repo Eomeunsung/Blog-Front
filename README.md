@@ -56,7 +56,7 @@
 
   
    <tr>
-    <td><img width="764" height="583" alt="스크린샷 2025-07-23 14 51 03" src="https://github.com/user-attachments/assets/08047fa3-0691-4c61-aea4-3de3ee50af77" /></td>
+    <td><img width="729" height="609" alt="스크린샷 2025-07-23 14 52 34" src="https://github.com/user-attachments/assets/af2e9947-de1e-44e4-a92e-a05651f20a30" /></td>
     <td><img width="476" height="599" alt="스크린샷 2025-07-23 14 30 59" src="https://github.com/user-attachments/assets/de9c85a9-d24e-4f9a-a436-edba3f552b92" /></td>
   </tr>
   <tr>
