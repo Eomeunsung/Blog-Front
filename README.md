@@ -59,3 +59,8 @@
 - **채팅 목록**
 ---
 
+## ERD다이어그램
+<img width="904" height="713" alt="스크린샷 2025-07-21 13 25 48" src="https://github.com/user-attachments/assets/c7b9f9b4-4021-4d36-84a8-e89fae2250ce" />
+
+
+
