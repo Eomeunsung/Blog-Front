@@ -53,6 +53,16 @@
     <td align="center">친구 요청</td>
     <td align="center">친구 수락</td>
   </tr>
+
+  
+   <tr>
+    <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 51 24" src="https://github.com/user-attachments/assets/864c89e1-2195-45f3-a75b-2f708fa8d936" /></td>
+    <td><img width="771" height="560" alt="스크린샷 2025-07-23 13 52 17" src="https://github.com/user-attachments/assets/328c9301-fb03-4b14-8a92-5811d274f381" /></td>
+  </tr>
+  <tr>
+    <td align="center">친구 요청</td>
+    <td align="center">친구 수락</td>
+  </tr>
 </table>
 
 
