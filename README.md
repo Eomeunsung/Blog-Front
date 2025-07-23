@@ -31,7 +31,6 @@
     <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
     <td><img width="335" height="585" alt="스크린샷 2025-07-23 13 29 40" src="https://github.com/user-attachments/assets/c4b038e0-1cfb-4676-a365-07e188ed3832" /></td>
   </tr>
-
   <tr>
     <td align="center">Blog 작성</td>
     <td align="center">Blog 수정</td>
@@ -41,12 +40,22 @@
     <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 32 29" src="https://github.com/user-attachments/assets/c9d52f11-5aa5-43ec-b40a-adaf687eb42a" /></td>
     <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
   </tr>
-
   <tr>
     <td align="center">블로그 삭제</td>
     <td align="center">채팅방 생성 로직</td>
   </tr>
+
+   <tr>
+    <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 51 24" src="https://github.com/user-attachments/assets/864c89e1-2195-45f3-a75b-2f708fa8d936" /></td>
+    <td><img width="771" height="560" alt="스크린샷 2025-07-23 13 52 17" src="https://github.com/user-attachments/assets/328c9301-fb03-4b14-8a92-5811d274f381" /></td>
+  </tr>
+  <tr>
+    <td align="center">친구 요청</td>
+    <td align="center">친구 수락</td>
+  </tr>
 </table>
+
+
 
 
 ---
