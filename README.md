@@ -21,6 +21,14 @@
 백엔드는 Spring Boot 기반으로 직접 REST API 및 WebSocket 기반 채팅 기능을 설계하고 구현하였고,
 프론트 엔드는 React가 처음이라 AI를 활용하여 구현하였습니다.
 
+## ERD다이어그램
+<img width="904" height="713" alt="스크린샷 2025-07-21 13 25 48" src="https://github.com/user-attachments/assets/c7b9f9b4-4021-4d36-84a8-e89fae2250ce" />
+
+
+## 흐름도
+<img width="449" height="607" alt="스크린샷 2025-07-23 13 11 13" src="https://github.com/user-attachments/assets/f642dc66-69ef-4637-b73b-706ae0e8a0b2" />
+- **채팅 흐름도**
+---
 
 ## 프로젝트 결과물
 ![스크린샷 2025-06-17 13 16 02](https://github.com/user-attachments/assets/8aec36de-f083-4ae5-8603-68b4d2a34651)
@@ -61,15 +69,6 @@
 - **채팅 목록**
 ---
 
-## ERD다이어그램
-<img width="904" height="713" alt="스크린샷 2025-07-21 13 25 48" src="https://github.com/user-attachments/assets/c7b9f9b4-4021-4d36-84a8-e89fae2250ce" />
-
-
-## 흐름도
-<img width="501" height="627" alt="스크린샷 2025-07-23 13 07 07" src="https://github.com/user-attachments/assets/aca6d411-2274-4c4a-88e2-24b657fecc3d" />
-
-- **채팅 흐름도**
----
 
 
 
