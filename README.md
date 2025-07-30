@@ -38,12 +38,13 @@
 
  <tr>
     <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 32 29" src="https://github.com/user-attachments/assets/c9d52f11-5aa5-43ec-b40a-adaf687eb42a" /></td>
-    <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
+    <td><img width="667" height="663" alt="스크린샷 2025-07-30 17 10 41" src="https://github.com/user-attachments/assets/e40dbade-cbc1-4a31-9edb-82943cfbb021" /></td>
   </tr>
   <tr>
     <td align="center">Blog 삭제</td>
-    <td align="center">아직 정리 안함 " 나중에 댓글 흐름도 추가"</td>
+    <td align="center">Blog 댓글</td>
   </tr>
+
 
    <tr>
     <td><img width="316" height="560" alt="스크린샷 2025-07-23 13 51 24" src="https://github.com/user-attachments/assets/864c89e1-2195-45f3-a75b-2f708fa8d936" /></td>
