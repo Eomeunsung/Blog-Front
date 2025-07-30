@@ -41,7 +41,7 @@
     <td><img width="392" height="629" alt="스크린샷 2025-07-23 13 25 31" src="https://github.com/user-attachments/assets/67dfd1ad-45aa-4f4a-b3d0-50c81f991320" /></td>
   </tr>
   <tr>
-    <td align="center">블로그 삭제</td>
+    <td align="center">Blog 삭제</td>
     <td align="center">아직 정리 안함 " 나중에 댓글 흐름도 추가"</td>
   </tr>
 
