@@ -13,7 +13,7 @@
 
 ## 기술 스택
 - **Frontend**: React, React Router, Axios
-- **Backend**: Spring Boot, Spring Data JPA, Spring Security, JWT WebSocket, MariaDB
+- **Backend**: Spring Boot, Spring Data JPA, Spring Security, JWT WebSocket, MariaDB, Redis
 - **Version Control**: Git, GitHub
 
 ## 프로젝트 후기
